@@ -62,7 +62,7 @@ const ProgramHome = () => {
           {t("decouvrez_programme")}
         </p>
         <div className="mt-4">
-          <SeeMore path="program" children={t("voir_tout_programme")} />
+          <SeeMore path="program/2026" children={t("voir_tout_programme")} />
         </div>
 
         <div className="relative mt-12">

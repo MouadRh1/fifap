@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
 import djillaliHadjouis from "../../Image/Djillali-Hadjouis.png";
 import youssefBokbot from "../../Image/Youssef-Bokbot.png";
@@ -19,6 +20,9 @@ const Conferences = () => {
       speakerRole: t("conf1_speakerRole"),
       image: djillaliHadjouis,
       description: t("conf1_description"),
+      date: "Mercredi 10 Juin 2026",
+      time: "10:00",
+      place: "Cinéma Renaissance",
     },
     {
       id: 2,
@@ -28,6 +32,9 @@ const Conferences = () => {
       speakerRole: t("conf2_speakerRole"),
       image: youssefBokbot,
       description: t("conf2_description"),
+      date: "Jeudi 11 Juin 2026",
+      time: "10:00",
+      place: "Cinéma Renaissance",
     },
     {
       id: 3,
@@ -37,6 +44,9 @@ const Conferences = () => {
       speakerRole: t("conf3_speakerRole"),
       image: drissOuarhache,
       description: t("conf3_description"),
+      date: "Vendredi 12 Juin 2026",
+      time: "10:00",
+      place: "Cinéma Renaissance",
     },
   ];
 
@@ -90,12 +100,28 @@ const Conferences = () => {
                       } mt-3`}
                     >
                       <p className="text-lg font-semibold text-gray-700">
-                        {t("by")} {conf.speaker.toUpperCase()}
+                        {t("by")} {conf.speaker}
                       </p>
                       <p className="text-sm text-gray-500 mt-1">
                         {conf.speakerRole}
                       </p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Date, heure et lieu */}
+                <div className="flex flex-wrap gap-6 mb-6 pb-4 border-b border-gray-200">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <FaCalendarAlt className="text-[#ac5f2d]" />
+                    <span>{conf.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <FaClock className="text-[#ac5f2d]" />
+                    <span>{conf.time}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <FaMapMarkerAlt className="text-[#ac5f2d]" />
+                    <span>{conf.place}</span>
                   </div>
                 </div>
 
