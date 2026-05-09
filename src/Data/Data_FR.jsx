@@ -27,7 +27,7 @@ import rachidBenzine from "../Image/rachid-benzine.jpg";
 import hakim from "../Image/Hakim_Belabbes.jpg";
 import nadia from "../Image/nadia-achour.png";
 import meriem from "../Image/meriem_ait.jpeg";
-import djillali from "../Image/djillali-hadjouis.png";
+import djillali from "../Image/Djillali-Hadjouis.png";
 import basma from "../Image/basma.jpeg";
 
 import { v4 as uuidv4 } from "uuid";

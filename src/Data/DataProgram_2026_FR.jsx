@@ -25,7 +25,7 @@ import notreDame from "./../Image/enquete_image19.png";
 import toba from "./../Image/toba_image20.png";
 import fouillesAbbeville from "./../Image/Fouilles_image21.png";
 import premiersPaysans from "./../Image/peau_image22.png";
-import djillaliHadjouis from "./../Image/djillali-Hadjouis.png";
+import djillaliHadjouis from "./../Image/Djillali-Hadjouis.png";
 import youssefBokbot from "./../Image/youssef-bokbot.png";
 import drissOuarhache from "./../Image/Driss-Ouarhache.png";
 import sofia from "./../Image/sofia-mestari.jpeg";
