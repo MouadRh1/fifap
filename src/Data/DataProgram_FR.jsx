@@ -36,7 +36,7 @@ import naufrages from "./../Image/naufrages.jpg";
 import iznik from "./../Image/iznik.jpg";
 import discours from "./../Image/discours.jpg";
 import palaisPersepolie from "./../Image/palais-persepolie.jpg";
-import cineBlanca from "../Image/cineBlanca.jpg";
+import cineBlanca from "../Image/cine-blanca.jpg";
 import awards from "../Image/awards.jpg";
 import citeObliee from "../Image/cite-obliee.png";
 import conferance from "../Image/conferance.jpg";
