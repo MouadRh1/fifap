@@ -1,7 +1,7 @@
 import { image, title } from "framer-motion/client";
 import React from "react";
 import christophe from "./../Image/Christophe.png";
-import Chorfi from "./../Image/Chorfi-abdo.jpg";
+import Chorfi from "./../Image/chorfi-abde.jpeg";
 import Jalil from "./../Image/Jalil-Nour.jpg";
 import Rahmouni from "./../Image/Rahmouni_eltayeb.jpg";
 import Ali from "./../Image/Ali-Safi.jpg";
