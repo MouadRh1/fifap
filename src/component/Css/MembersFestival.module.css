@@ -1,0 +1,62 @@
+.swiper{
+    width: 100% !important;
+}
+.membersWrapper{
+    /* display: flex; */
+    flex-direction: row;
+}
+.container{
+    display: flex;
+    gap: 20px;
+}
+.action {
+    all: unset; /* Réinitialise toutes les propriétés par défaut du bouton */
+    cursor: pointer; /* Pour garder le curseur main */
+    display: flex; /* Pour centrer l'icône */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.icon{
+    color: black;
+    font-size: 50px;
+}
+.membersItem{
+    /* display: flex; */
+    align-items: center;
+    gap: 30px;
+    min-height: 350px;
+}
+.membersItem .nationalité{
+    text-align: center;
+    color: gray;
+    text-transform: uppercase;
+}
+.membersItem .name{
+    text-transform: uppercase;
+}
+.action:hover ,action:focus{
+    background-color: transparent;
+} 
+.seeMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seeMore a{
+    padding: 10px;
+    background-color: #155dfc;
+    border-radius: 10px;
+    color: #fff;
+}
+@media screen and (max-width:768px){
+    .membersWrapper{
+        flex-direction: column;
+    }
+    .flexItem{
+        flex-direction: column;
+    }
+    .icon{
+        font-size: 30px;
+    }
+}

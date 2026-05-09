@@ -1,0 +1,43 @@
+.slide{
+    background-image: url('./../../Image/FIFAP-banner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.slide::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    top: 0 ;
+    left: 0;
+    background: radial-gradient(circle , rgba(255,255,255,0) 0%, rgba(0,0,0,.2) 100% );
+}
+.title{
+    transition: 1s;
+    font-family: "Playfair Display", serif;
+}
+.titleBody{
+    transition: 1s;
+    font-family: 'poppins';
+}
+.button-download {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none; /* Désactive l'interaction de l'overlay */
+}
+  
+  
+@media screen and (max-width:600px){
+    .slide{
+        background-image: url('./../../Image/FIFAP-banner-mobile.png');
+    }
+    .slide::after{
+        background: radial-gradient(circle , rgba(255,255,255,0) 0%, rgba(0,0,0,.4) 100% );
+    }
+}

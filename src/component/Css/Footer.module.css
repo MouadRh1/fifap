@@ -1,0 +1,68 @@
+.footer{
+    background-color: #6b3c1d;
+    height: 500px;
+    display: flex;
+
+
+    .LogoAndTitle{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+    }
+    .EvoMarketLogo{
+        width: 200px;
+        height: 150px;
+        margin-top: 45px;
+        margin-left: 160px;
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .TitleFooter{
+
+        font-size: 20px;
+        font-weight: 700;
+        margin: 10px;
+        margin-left: 160px;
+        color: white;
+        text-shadow: 2px 2px 10px black;
+    }
+
+    .contactUs{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        margin-top: 230px;
+        margin-left: 250px;
+
+        .contactTitle{
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px black;
+            text-align: center;
+        }
+    }
+
+    .reseaxSociaux{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-top: 390px;
+        position: absolute;
+        left: 360px;
+
+        i{
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+        }
+    }
+
+    .line{
+        background-color: white;
+        width: 4px;
+        height: 390px;
+        margin: 80px;
+    }
+  }
