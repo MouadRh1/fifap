@@ -1,7 +1,7 @@
 // src/context/LanguageContext.jsx
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import ProgramData_fr from '../Data/DataProgram_fr';
-import ProgramData_ar from '../Data/DataProgram_ar';
+import ProgramData_fr from '../Data/DataProgram_FR';
+import ProgramData_ar from '../Data/DataProgram_AR';
 
 const LanguageContext = createContext();
 
