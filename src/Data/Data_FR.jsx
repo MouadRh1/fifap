@@ -18,7 +18,7 @@ import Hassan from "../Image/hassan.jpg";
 import AgnèsHumruzian from "../Image/Agnès-Humruzian.jpg";
 import fadhila from "../Image/fadhila.jpeg";
 // import françoise from "../Image/françoise.jpeg";
-import françoise from "../Image/françoise.jpeg";
+import françoise from "../Image/Françoise.jpeg";
 import fouad from "../Image/fouad.jpeg";
 import amal from "../Image/amal-ayouch.jpg";
 import lemjidi from "../Image/lemjidi-abdelkhalek.jpg";
