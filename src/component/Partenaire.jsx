@@ -48,13 +48,13 @@ const partenaires = [
     logo: partenaire4,
     link: "https://www.partenaire4.com",
   },
-  {
-    id: 5,
-    name: "TM5",
-    name_ar: "تي إم 5",
-    logo: tm5,
-    link: "https://tm5.ma/",
-  },
+  // {
+  //   id: 5,
+  //   name: "TM5",
+  //   name_ar: "تي إم 5",
+  //   logo: tm5,
+  //   link: "https://tm5.ma/",
+  // },
   {
     id: 6,
     name: "Académie Hassan II",
@@ -83,13 +83,13 @@ const partenaires = [
     logo: partenaire9,
     link: "https://www.aplus.ma",
   },
-  {
-    id: 10,
-    name: "Cinémathèque",
-    name_ar: "سينماتيك",
-    logo: partenaire10,
-    link: "https://www.cinematheque.ma",
-  },
+  // {
+  //   id: 10,
+  //   name: "Cinémathèque",
+  //   name_ar: "سينماتيك",
+  //   logo: partenaire10,
+  //   link: "https://www.cinematheque.ma",
+  // },
   {
     id: 11,
     name: "Hiba Noir",
@@ -97,13 +97,13 @@ const partenaires = [
     logo: partenaire11,
     link: "https://www.hibanoir.ma",
   },
-  {
-    id: 12,
-    name: "FTA",
-    name_ar: "إف تي إيه",
-    logo: partenaire12,
-    link: "https://www.fta.ma",
-  },
+  // {
+  //   id: 12,
+  //   name: "FTA",
+  //   name_ar: "إف تي إيه",
+  //   logo: partenaire12,
+  //   link: "https://www.fta.ma",
+  // },
   {
     id: 13,
     name: "Markaz",
@@ -111,13 +111,13 @@ const partenaires = [
     logo: markaz,
     link: "https://www.markaz.ma",
   },
-  {
-    id: 14,
-    name: "ICOMOS",
-    name_ar: "إيكوموس",
-    logo: icomos,
-    link: "https://www.icomos.ma",
-  },
+  // {
+  //   id: 14,
+  //   name: "ICOMOS",
+  //   name_ar: "إيكوموس",
+  //   logo: icomos,
+  //   link: "https://www.icomos.ma",
+  // },
 ];
 
 const PartenaireComponent = () => {

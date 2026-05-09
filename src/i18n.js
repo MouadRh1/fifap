@@ -115,8 +115,7 @@ i18n.use(initReactI18next).init({
 
         conf2_title:
           "Les récentes découvertes archéologiques exceptionnelles au Maroc et leur contribution à la réécriture de l'histoire de l'Afrique du Nord et du Sahara.",
-        conf2_subtitle:
-          "",
+        conf2_subtitle: "",
         conf2_speaker: "Youssef Bokbot",
         conf2_speakerRole:
           "Archéologue, professeur à l'Institut National des Sciences de l'Archéologie et du Patrimoine",
@@ -135,8 +134,7 @@ i18n.use(initReactI18next).init({
         a_propos_description:
           "Découvrez notre histoire, nos valeurs et notre engagement à fournir les meilleurs services.",
         presentation_festival: "Présentation du Festival",
-        presentation_texte:
-          `Le film documentaire archéologique et patrimonial est un des moyens les plus attractifs pour mettre l'accent sur ce patrimoine. L'intérêt de ce festival consiste d'abord à s'adresser à un large public pour qu'il découvre différents sujets sur le patrimoine et l'archéologie. Les projections de films seront accompagnées de débats avec les différents acteurs du patrimoine et les professionnels du cinéma qui partageront leurs passions et leurs savoirs. Le festival veut aussi assurer la promotion et la valorisation du patrimoine matériel et immatériel marocain grâce notamment à la création d'un prix attribué à de jeunes réalisateurs pour la production d'un court métrage sur le patrimoine marocain. Ce festival sera ainsi le premier rendez-vous des professionnels du cinéma documentaire d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il rejoindra le réseau des autres festivals de ce type: Amiens, Bordeaux et Narbonne en France ; Oiasso en Espagne ; Rovereto, Florence et Licodia en Italie ; Athènes en Grèce ; Nyon en Suisse ; Split en Croatie ; Arkhaios aux USA. Cette édition se tiendra à Rabat, ville lumière et capitale du Maroc, fondée au XIIème siècle par les Almohades sous le règne d'Abd El Moumen (1133-1163). Sous l'impulsion de Yaqoub El Mansour (1184-1199), le véritable fondateur de Rabat, la ville a connu de grandes constructions. Le souverain a édifié une grande muraille qui s'étendait le long de la Casbah, jalonnée de tours et percée de cinq portes ; il a également construit la mosquée dont la « Tour Hassân » qui s'apparente aux minarets de la Koutoubia à Marrakech et de la Giralda à Séville. En face de Bab Zaër, se situe le complexe archéologique Chellah sur une basse colline qui domaine la vallée de l'Oued Bouregrag. Le site composé d'une nécropole mérinide et de l'ancienne cité romaine de Sala, est encerclé d'une enceinte de murailles entourant une mosquée, une médersa, un mausolée, un capitole, des thermes et un arc de triomphe. L'histoire de Rabat se prolonge dans un passé très lointain par la présence de vestiges, <em class=\"italic\">Homo erectus</em> y a 400 000 ans (Salé et Rabat-Kebibat). Les grottes du littoral atlantique ont également livré des restes humains appartenant à une civilisation atérienne propre au Nord de l'Afrique et dont les datations remontent à plus de 92 000 ans. Cette édition sous le thème « Hommes, cultures territoires » propose une programmation riche et diversifiée à travers la projection d'une vingtaine de documentaires couvrant l'actualité archéologique. Une semaine de voyage archéologique visuel et sonore nous conduira à travers le temps aux quatre coins du monde à la recherche de nos ancêtres les plus lointains. Cette édition sera le moyen de présenter une série de conférences et des rencontres avec des archéologues, des réalisateurs et des historiens.`,
+        presentation_texte: `Le film documentaire archéologique et patrimonial est un des moyens les plus attractifs pour mettre l'accent sur ce patrimoine. L'intérêt de ce festival consiste d'abord à s'adresser à un large public pour qu'il découvre différents sujets sur le patrimoine et l'archéologie. Les projections de films seront accompagnées de débats avec les différents acteurs du patrimoine et les professionnels du cinéma qui partageront leurs passions et leurs savoirs. Le festival veut aussi assurer la promotion et la valorisation du patrimoine matériel et immatériel marocain grâce notamment à la création d'un prix attribué à de jeunes réalisateurs pour la production d'un court métrage sur le patrimoine marocain. Ce festival sera ainsi le premier rendez-vous des professionnels du cinéma documentaire d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il rejoindra le réseau des autres festivals de ce type: Amiens, Bordeaux et Narbonne en France ; Oiasso en Espagne ; Rovereto, Florence et Licodia en Italie ; Athènes en Grèce ; Nyon en Suisse ; Split en Croatie ; Arkhaios aux USA. Cette édition se tiendra à Rabat, ville lumière et capitale du Maroc, fondée au XIIème siècle par les Almohades sous le règne d'Abd El Moumen (1133-1163). Sous l'impulsion de Yaqoub El Mansour (1184-1199), le véritable fondateur de Rabat, la ville a connu de grandes constructions. Le souverain a édifié une grande muraille qui s'étendait le long de la Casbah, jalonnée de tours et percée de cinq portes ; il a également construit la mosquée dont la « Tour Hassân » qui s'apparente aux minarets de la Koutoubia à Marrakech et de la Giralda à Séville. En face de Bab Zaër, se situe le complexe archéologique Chellah sur une basse colline qui domaine la vallée de l'Oued Bouregrag. Le site composé d'une nécropole mérinide et de l'ancienne cité romaine de Sala, est encerclé d'une enceinte de murailles entourant une mosquée, une médersa, un mausolée, un capitole, des thermes et un arc de triomphe. L'histoire de Rabat se prolonge dans un passé très lointain par la présence de vestiges, <em class=\"italic\">Homo erectus</em> y a 400 000 ans (Salé et Rabat-Kebibat). Les grottes du littoral atlantique ont également livré des restes humains appartenant à une civilisation atérienne propre au Nord de l'Afrique et dont les datations remontent à plus de 92 000 ans. Cette édition sous le thème « Hommes, cultures territoires » propose une programmation riche et diversifiée à travers la projection d'une vingtaine de documentaires couvrant l'actualité archéologique. Une semaine de voyage archéologique visuel et sonore nous conduira à travers le temps aux quatre coins du monde à la recherche de nos ancêtres les plus lointains. Cette édition sera le moyen de présenter une série de conférences et des rencontres avec des archéologues, des réalisateurs et des historiens.`,
         association_cerpaam: "Association CERPAAM",
         coordonnees: "Coordonnées",
         festival_name:
@@ -155,6 +153,21 @@ i18n.use(initReactI18next).init({
 
         programme_2025: "Programme 2025",
         programme_2026: "Programme 2026",
+
+        // footer
+        footer_description:
+          "Deuxième Festival International du Film Archéologique et Patrimonial de Rabat",
+        footer_links: "Liens",
+        accueil: "Accueil",
+        programme: "Programme",
+        contact: "Contact",
+        a_propos: "À propos",
+        email: "Email",
+        telephone: "Téléphone",
+        tous_droits_reserves: "Tous droits réservés",
+        politique_confidentialite: "Politique de confidentialité",
+        mentions_legales: "Mentions légales",
+        site_by: "Site par",
       },
     },
     ar: {
@@ -313,6 +326,22 @@ i18n.use(initReactI18next).init({
 
         programme_2025: "برنامج 2025",
         programme_2026: "برنامج 2026",
+
+
+        //footer
+        footer_description:
+          "المهرجان الدولي الثاني للفيلم الأثري والتراثي بالرباط",
+        footer_links: "روابط",
+        accueil: "الرئيسية",
+        programme: "البرنامج",
+        contact: "اتصل بنا",
+        a_propos: "عن المهرجان",
+        email: "البريد الإلكتروني",
+        telephone: "الهاتف",
+        tous_droits_reserves: "جميع الحقوق محفوظة",
+        politique_confidentialite: "سياسة الخصوصية",
+        mentions_legales: "إشعار قانوني",
+        site_by: "تصميم",
       },
     },
   },

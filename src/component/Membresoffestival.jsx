@@ -7,8 +7,16 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import SeeMore from "./Outil/SeeMore";
-import { prefaces as prefacesFR, comiteDorganisation as comiteFR, memberJury as juryFR } from "../Data/Data_FR";
-import { prefaces as prefacesAR, comiteDorganisation as comiteAR, memberJury as juryAR } from "../Data/Data_AR";
+// import { prefaces as prefacesFR, comiteDorganisation as comiteFR, memberJury as juryFR } from "../Data/Data_FR";
+// import { prefaces as prefacesAR, comiteDorganisation as comiteAR, memberJury as juryAR } from "../Data/Data_AR";
+import {
+  comiteDorganisation as comiteFR,
+  memberJury as juryFR,
+} from "../Data/Data_FR";
+import {
+  comiteDorganisation as comiteAR,
+  memberJury as juryAR,
+} from "../Data/Data_AR";
 
 const DefaultAvatar = ({ name, className }) => {
   const getInitials = (fullName) => {
@@ -34,7 +42,7 @@ const Membresoffestival = () => {
   const swiperRefComite = useRef(null);
   const swiperRefJury = useRef(null);
   const swiperRefPreface = useRef(null);
-  
+
   const [prefaces, setPrefaces] = useState([]);
   const [comiteDorganisation, setComiteDorganisation] = useState([]);
   const [memberJury, setMemberJury] = useState([]);
@@ -44,13 +52,20 @@ const Membresoffestival = () => {
 
   useEffect(() => {
     const loadData = () => {
-      const currentLang = i18n.language || localStorage.getItem('language') || 'fr';
-      if (currentLang === 'ar') {
-        setPrefaces(prefacesAR);
+      const currentLang =
+        i18n.language || localStorage.getItem("language") || "fr";
+
+      // Préfaces commentées temporairement
+      // if (currentLang === 'ar') {
+      //   setPrefaces(prefacesAR);
+      // } else {
+      //   setPrefaces(prefacesFR);
+      // }
+
+      if (currentLang === "ar") {
         setComiteDorganisation(comiteAR);
         setMemberJury(juryAR);
       } else {
-        setPrefaces(prefacesFR);
         setComiteDorganisation(comiteFR);
         setMemberJury(juryFR);
       }
@@ -59,20 +74,17 @@ const Membresoffestival = () => {
     loadData();
   }, [i18n.language]);
 
-  // const memberJuryTries = [...memberJury].sort((a, b) => a.nom.localeCompare(b.nom));
-
-  // Fonction pour extraire le texte de description (gère les objets JSX)
   const getDescriptionText = (description) => {
-    if (typeof description === 'string') {
+    if (typeof description === "string") {
       return description;
     }
     if (description && description.props && description.props.children) {
       const children = description.props.children;
-      if (typeof children === 'string') {
+      if (typeof children === "string") {
         return children.slice(0, 100);
       }
       if (Array.isArray(children)) {
-        const text = children.find(child => typeof child === 'string');
+        const text = children.find((child) => typeof child === "string");
         return text ? text.slice(0, 100) : t("aucune_description");
       }
     }
@@ -81,14 +93,17 @@ const Membresoffestival = () => {
 
   const renderSwiper = (data, title, ref, roleOrTitle) => {
     const isPreface = title === "Preface";
-    
+
     return (
       <div className="relative mt-10">
         <button
           onClick={() => ref.current?.slidePrev()}
           className={`absolute ${isArabic ? "right-[-10px]" : "left-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
         >
-          <MdNavigateBefore size={24} className={isArabic ? "rotate-180" : ""} />
+          <MdNavigateBefore
+            size={24}
+            className={isArabic ? "rotate-180" : ""}
+          />
         </button>
 
         <Swiper
@@ -115,7 +130,6 @@ const Membresoffestival = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 className="bg-white p-6 my-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform flex flex-col h-full"
               >
-                {/* Image */}
                 <div className="flex justify-center items-center mb-4">
                   {member.image ? (
                     <img
@@ -124,7 +138,10 @@ const Membresoffestival = () => {
                       className="w-32 h-32 rounded-full object-cover border-4 border-gray-800 shadow-lg"
                     />
                   ) : (
-                    <DefaultAvatar name={member.nom} className="w-32 h-32 border-4 border-gray-800" />
+                    <DefaultAvatar
+                      name={member.nom}
+                      className="w-32 h-32 border-4 border-gray-800"
+                    />
                   )}
                   {member.image2 && (
                     <img
@@ -135,19 +152,15 @@ const Membresoffestival = () => {
                   )}
                 </div>
 
-                {/* Nom */}
                 <h3 className="text-lg font-semibold text-center uppercase text-gray-800 mt-2">
                   {member.nom}
                 </h3>
 
-                {/* Description ou badge pour comité/jury */}
                 {isPreface ? (
-                  // Pour les préfaces : afficher la description
                   <p className="mt-3 text-center text-gray-600 text-sm line-clamp-3 px-2">
                     {getDescriptionText(member.description)}
                   </p>
                 ) : (
-                  // Pour comité et jury : afficher le rôle et la nationalité
                   <>
                     <div className="flex justify-center py-2 items-center">
                       {member.role && (
@@ -161,16 +174,18 @@ const Membresoffestival = () => {
                         </span>
                       )}
                     </div>
-                    <p className="text-center text-gray-500 text-sm">{member.nationalite}</p>
+                    <p className="text-center text-gray-500 text-sm">
+                      {member.nationalite}
+                    </p>
                     <p className="mt-2 text-center text-gray-600 text-sm line-clamp-2">
                       {typeof member.description === "string"
-                        ? member.description.slice(0, 80) + (member.description.length > 80 ? "..." : "")
+                        ? member.description.slice(0, 80) +
+                          (member.description.length > 80 ? "..." : "")
                         : t("aucune_description")}
                     </p>
                   </>
                 )}
 
-                {/* Badge Préface / Voir Plus */}
                 <div className="mt-4 flex justify-center">
                   <LearnMore
                     path={member.route}
@@ -212,30 +227,36 @@ const Membresoffestival = () => {
   return (
     <div className="py-3 bg-orange-100">
       <div className="max-w-screen-2xl mx-auto px-6">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ac5f2d] mt-4 mb-4">
+        {/* Section Préfaces - Commentée temporairement */}
+        {/* <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ac5f2d] mt-4 mb-4">
           {t("prefaces_titre")}
         </h3>
         <p className="text-lg text-gray-600 mb-6">{t("prefaces_description")}</p>
+        {prefaces.length > 0 && renderSwiper(prefaces, "Preface", swiperRefPreface)} */}
 
-        {prefaces.length > 0 && renderSwiper(prefaces, "Preface", swiperRefPreface)}
-
-        <h3 className="text-4xl font-bold text-[#ac5f2d] mb-4">{t("comite_organisation")}</h3>
+        <h3 className="text-4xl font-bold text-[#ac5f2d] mb-4">
+          {t("comite_organisation")}
+        </h3>
         <SeeMore path="moremembers" children={t("voir_tous_membres_comite")} />
-        {comiteDorganisation.length > 0 && renderSwiper(
-          comiteDorganisation,
-          "Comité d'Organisation",
-          swiperRefComite,
-          t("comite_organisation")
-        )}
+        {comiteDorganisation.length > 0 &&
+          renderSwiper(
+            comiteDorganisation,
+            "Comité d'Organisation",
+            swiperRefComite,
+            t("comite_organisation"),
+          )}
 
-        <h3 className="text-4xl font-bold text-[#ac5f2d] mt-16 mb-4">{t("membres_jury")}</h3>
+        <h3 className="text-4xl font-bold text-[#ac5f2d] mt-16 mb-4">
+          {t("membres_jury")}
+        </h3>
         <SeeMore path="moremembers" children={t("voir_tous_membres_jury")} />
-        {memberJury.length > 0 && renderSwiper(
-          memberJury,
-          "Membres du Jury",
-          swiperRefJury,
-          t("membre_jury")
-        )}
+        {memberJury.length > 0 &&
+          renderSwiper(
+            memberJury,
+            "Membres du Jury",
+            swiperRefJury,
+            t("membre_jury"),
+          )}
       </div>
     </div>
   );

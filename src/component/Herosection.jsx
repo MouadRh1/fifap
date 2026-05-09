@@ -72,6 +72,114 @@ const Herosection = () => {
             </h1>
           )}
         </MotionSection>
+        {/* Badge Entrée Libre */}
+        <MotionSection className="flex justify-center md:justify-start mb-8 md:mb-0 md:mt-6">
+          <div
+            className="relative flex flex-col bg-[#1a0a00] md:bg-[#1a0a00]/70 items-center justify-center"
+            style={{
+              // background: "#1a0a00",
+              borderRadius: "16px",
+              padding: "0",
+              width: "220px",
+              height: "110px",
+              overflow: "hidden",
+            }}
+          >
+            {/* Encoches latérales */}
+            <div
+              style={{
+                position: "absolute",
+                left: "-12px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "24px",
+                height: "24px",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.08)",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                right: "-12px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "24px",
+                height: "24px",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.08)",
+              }}
+            />
+
+            {/* Ligne pointillée centrale */}
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "12px",
+                right: "12px",
+                borderTop: "1px dashed #ac5d2f",
+                opacity: 0.5,
+              }}
+            />
+
+            {/* Haut du ticket */}
+            <div
+              className="flex flex-col items-center"
+              style={{ paddingBottom: "12px" }}
+            >
+              <span
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "9px",
+                  color: "#d4945a",
+                  letterSpacing: "4px",
+                }}
+              >
+                FESTIVAL · RABAT
+              </span>
+              <span
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "20px",
+                  fontWeight: "bold",
+                  color: "#f5e6d0",
+                  letterSpacing: "2px",
+                }}
+              >
+                ENTRÉE LIBRE
+              </span>
+            </div>
+
+            {/* Bas du ticket */}
+            <div
+              className="flex flex-col items-center"
+              style={{ paddingTop: "12px" }}
+            >
+              <span
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "9px",
+                  color: "#d4945a",
+                  letterSpacing: "3px",
+                }}
+              >
+                09 - 13 JUIN 2026
+              </span>
+            </div>
+
+            {/* Bordure intérieure en pointillés */}
+            <div
+              style={{
+                position: "absolute",
+                inset: "6px",
+                borderRadius: "10px",
+                border: "0.8px dashed rgba(172, 93, 47, 0.4)",
+                pointerEvents: "none",
+              }}
+            />
+          </div>
+        </MotionSection>
 
         {/* Texte descriptif (à droite en desktop, centré en mobile) */}
         <MotionSection className="hidden md:block sm:pt-2 md:pt-44 lg:pt-65 max-[1200px]:pt-10 md:ml-4 mt-4 md:mt-0">
