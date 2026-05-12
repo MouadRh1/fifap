@@ -7,13 +7,13 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import SeeMore from "./Outil/SeeMore";
-// import { prefaces as prefacesFR, comiteDorganisation as comiteFR, memberJury as juryFR } from "../Data/Data_FR";
-// import { prefaces as prefacesAR, comiteDorganisation as comiteAR, memberJury as juryAR } from "../Data/Data_AR";
 import {
+  prefaces as prefacesFR,
   comiteDorganisation as comiteFR,
   memberJury as juryFR,
 } from "../Data/Data_FR";
 import {
+  prefaces as prefacesAR,
   comiteDorganisation as comiteAR,
   memberJury as juryAR,
 } from "../Data/Data_AR";
@@ -54,18 +54,12 @@ const Membresoffestival = () => {
     const loadData = () => {
       const currentLang =
         i18n.language || localStorage.getItem("language") || "fr";
-
-      // Préfaces commentées temporairement
-      // if (currentLang === 'ar') {
-      //   setPrefaces(prefacesAR);
-      // } else {
-      //   setPrefaces(prefacesFR);
-      // }
-
       if (currentLang === "ar") {
+        setPrefaces(prefacesAR);
         setComiteDorganisation(comiteAR);
         setMemberJury(juryAR);
       } else {
+        setPrefaces(prefacesFR);
         setComiteDorganisation(comiteFR);
         setMemberJury(juryFR);
       }
@@ -74,6 +68,7 @@ const Membresoffestival = () => {
     loadData();
   }, [i18n.language]);
 
+  // Fonction pour extraire le texte de description (gère les objets JSX)
   const getDescriptionText = (description) => {
     if (typeof description === "string") {
       return description;
@@ -108,9 +103,9 @@ const Membresoffestival = () => {
 
         <Swiper
           className="px-10"
-          slidesPerView={3}
+          slidesPerView={2}
           spaceBetween={30}
-          loop={true}
+          loop={false}
           speed={800}
           modules={[Autoplay]}
           onSwiper={(swiper) => (ref.current = swiper)}
@@ -130,6 +125,7 @@ const Membresoffestival = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 className="bg-white p-6 my-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform flex flex-col h-full"
               >
+                {/* Image */}
                 <div className="flex justify-center items-center mb-4">
                   {member.image ? (
                     <img
@@ -152,10 +148,12 @@ const Membresoffestival = () => {
                   )}
                 </div>
 
+                {/* Nom */}
                 <h3 className="text-lg font-semibold text-center uppercase text-gray-800 mt-2">
                   {member.nom}
                 </h3>
 
+                {/* Description ou badge pour comité/jury */}
                 {isPreface ? (
                   <p className="mt-3 text-center text-gray-600 text-sm line-clamp-3 px-2">
                     {getDescriptionText(member.description)}
@@ -186,16 +184,13 @@ const Membresoffestival = () => {
                   </>
                 )}
 
+                {/* Bouton Voir Plus - pour les préfaces : toujours "Préface", plus d'éditorial */}
                 <div className="mt-4 flex justify-center">
                   <LearnMore
                     path={member.route}
                     name={member.slug}
                     children={
-                      title === "Preface"
-                        ? index === data.length - 1
-                          ? t("editorial")
-                          : t("preface")
-                        : t("voir_plus")
+                      title === "Preface" ? t("preface") : t("voir_plus")
                     }
                   />
                 </div>
@@ -227,12 +222,15 @@ const Membresoffestival = () => {
   return (
     <div className="py-3 bg-orange-100">
       <div className="max-w-screen-2xl mx-auto px-6">
-        {/* Section Préfaces - Commentée temporairement */}
-        {/* <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ac5f2d] mt-4 mb-4">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ac5f2d] mt-4 mb-4">
           {t("prefaces_titre")}
         </h3>
-        <p className="text-lg text-gray-600 mb-6">{t("prefaces_description")}</p>
-        {prefaces.length > 0 && renderSwiper(prefaces, "Preface", swiperRefPreface)} */}
+        <p className="text-lg text-gray-600 mb-6">
+          {t("prefaces_description")}
+        </p>
+
+        {prefaces.length > 0 &&
+          renderSwiper(prefaces, "Preface", swiperRefPreface)}
 
         <h3 className="text-4xl font-bold text-[#ac5f2d] mb-4">
           {t("comite_organisation")}

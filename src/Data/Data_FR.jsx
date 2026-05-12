@@ -38,136 +38,73 @@ export const prefaces = [
     nom: "Mohammed Mehdi BENSAID",
     image: mohamed_mehdi_bensaid,
     role: "Ministre de la Jeunesse, de la Culture et de la Communication",
-    title: "Festival International du Film Archéologique et Patrimonial ",
+    title:
+      "Préface 2ème Edition : Festival International du Film Archéologique et Patrimonial",
     description: (
       <>
-        A la frontière du cinéma, de la recherche scientifique et de
-        l’engagement culturel et citoyen, le film documentaire s’est frayé un
-        chemin singulier et chatoyant de diversité, et son rôle comme vecteur de
-        lien social, de dialogue interculturel et de débat civique, ne cesse de
-        se renforcer. <br />
+        Le cinéma a le même âge que l’anthropologie. Les deux activités naissent
+        à la fin du XIXème siècle, avides, toutes les deux, d’explorer le monde,
+        de se l’accaparer par la vue et l’écrit, de l’inventorier, de le
+        classer, et quelque part de le dominer. Depuis, l’anthropologie, et ses
+        disciplines sœurs, l’ethnologie, l’étude du patrimoine, l’archéologie,
+        et les autres sciences soucieuses de l’humain dans toute sa diversité,
+        se sont ouvertes sur la complexité, la pluralité, et l’égale dignité de
+        toutes les cultures humaines. Le cinéma, à son tour, est devenu le
+        porte-parole des voix et des récits marginaux ou alternatifs. C’est dire
+        combien le film documentaire et l’étude du patrimoine et de
+        l’archéologie ont de commun, tant dans les valeurs, que dans les
+        méthodes ou les objectifs.
         <br />
-        Le film documentaire s’est intéressé, depuis ses origines, au patrimoine
-        culturel, et en particulier à ses manifestations monumentales. Mais le
-        regard du film documentaire a toujours refusé le cliché et
-        l’ornementation superficielle. Sa vocation est de rendre la parole au
-        patrimoine, aussi fugace, aussi fragile soit-il. L’ethnologie, le vécu
-        quotidien, les mille et un éléments qui font le patrimoine immatériel,
-        furent très tôt reconnus par le film documentaire comme dignes du plus
-        grand intérêt, au même titre que les monuments les plus majestueux. Ce
-        regard visionnaire du film documentaire a précédé la reconnaissance au
-        niveau mondial, et l’intérêt du grand public pour la culture dans ses
-        aspects les plus variées et les moins spectaculaires. <br />
         <br />
-        En organisant le premier Festival International du Film Archéologique et
-        Patrimonial (FIFAP) de Rabat, le Centre d’Etudes et de Recherches du
-        Patrimoine Archéologique et Anthropologique du Moyen-Atlas (CERPAAM)
-        rend ainsi un triple hommage : au cinéma documentaire, au patrimoine
-        marocain, et enfin à ce pan fabuleux de notre passé, et qu’on commence
-        graduellement à découvrir et à estimer, notre patrimoine préhistorique.
-        Car cette première édition, en prenant pour thème « Afrique du Nord :
-        une réécriture de l’histoire humaine », met en lumière les découvertes
-        archéologiques qui se multiplient au Maroc, confirmant sa place comme
-        l’un des berceaux de l’humanité. <br />
+        Après une première édition réussie, le Festival International du Film
+        Archéologique et Patrimonial confirme l’institutionnalisation de sa
+        démarche avec cette deuxième édition qui le consacre comme rendez-vous
+        régulier. Cette année, il inscrit sa programmation sous la thématique «
+        Hommes, cultures, territoires ». Il rappelle ainsi l’importance des
+        communautés et des localisations spatiales et symboliques où se déploie
+        l’activité humaine. La grande variété des sujets abordés par les longs
+        et courts métrages en est témoin : diversité dans le temps, depuis le
+        paléolithique jusqu’à l’époque moderne ; diversité spatiale, depuis
+        l’Extrême-Orient jusqu’aux Amériques, en passant par l’Afrique, l’Europe
+        et le Moyen-Orient ; diversité des domaines et des sujets, musicologie
+        et gastronomie, architecture et volcanologie…
         <br />
-        Sous la Conduite Eclairée de Sa Majesté le Roi Mohammed VI, que Dieu
-        L’assiste, le Royaume du Maroc s’est engagé fermement dans une émergence
-        globale, qui fait de la culture le socle de son essor. Le patrimoine,
-        dans ses deux dimensions matérielle et immatérielle, est aujourd’hui un
-        pilier de nos politiques publiques. Parallèlement, un grand intérêt est
-        porté aux industries culturelles et créatives, avec le cinéma comme
-        locomotive. En consacrant le film documentaire, et singulièrement le
-        documentaire portant sur le patrimoine archéologique, le FIFAP fait
-        converger ces différentes passions marocaines, et sera voué à devenir un
-        rendez-vous incontournable, surtout qu’il s’agit du premier festival de
-        son genre en Afrique et dans le monde arabe. <br />
         <br />
-        Le film documentaire n’est pas une restitution froide. Œuvre d’artistes
-        et de créateurs, il s’agit d’un regard propre, et donc d’une
-        interprétation du patrimoine. En donnant à voir et à entendre le riche
-        passé universel, et en particulier notre préhistoire, les auteurs
-        invités à cette première édition feront partager au public de Rabat leur
-        passion, leur subjectivité, et leur engagement en faveur d’un espace
-        public informé, enraciné dans son passé et ouvert sur le monde. <br />
+        Cette pluralité ancrée dans les territoires résonne avec les Hautes
+        Orientations de Sa Majesté le Roi Mohammed VI, que Dieu L’assiste,
+        relatives à l’inscription du développement du Royaume dans la proximité
+        et le souci des communautés et territoires concernés, à travers la
+        concertation dans l’élaboration et l’implémentation des politiques
+        publiques. Le film documentaire, et l’intérêt porté aux cultures et
+        mémoires locales, aux récits et aux formes de mobilisation liées à la
+        valorisation de l’histoire, procurent des outils supplémentaires pour
+        construire cette émergence singulière, qui fait de la culture, de la
+        mémoire et du lien social, son socle principal.
         <br />
-        Les prix qui seront remis par différents jurys, dont un jury étudiant,
-        consolideront sans doute cette dynamique d’ouverture et d’enracinement.
-        Surtout que les rapports que tisse le documentaire avec les sujets qu’il
-        aborde peut en faire un puissant outil de développement. En permettant
-        aux différents publics de se reconnecter avec divers éléments du
-        patrimoine, le documentaire est en définitive un art à réécrire les
-        récits des territoires et des communautés, à les rapprocher et à les
-        faire dialoguer. <br />
-        <span className="text-center font-bold py-4 text-2xl">
-          Bon visionnage à tous !
-        </span>
+        <br />
+        Plus généralement, l’enjeu pour les pays du Sud est de poursuivre
+        l’appropriation de leur(s) récit(s) et de leur(s) histoire(s), de faire
+        parler le patrimoine, de le sortir de son mutisme, et de promouvoir une
+        coopération culturelle et artistique internationale fondée sur le
+        partage d’un universalisme pluriel. Et dans ce cadre, le rôle du
+        Festival International du Film Archéologique et Patrimonial est décisif.
+        <br />
+        <br />
+        En proposant conférences et débats, en ciblant des publics variés, en
+        sélectionnant aussi bien des cinéastes confirmés que de jeunes
+        réalisateurs, sous le regard esthète et érudit d’un jury de grande
+        qualité, enfin en consacrant un prix spécial décerné par les étudiants,
+        le FIFAP incarne par l’exemple une éthique inclusive et ouverte sur
+        l’expérimentation et l’innovation.
+        <br />
+        <br />
+        Il poursuit ainsi la vocation de ces deux jumeaux, le cinéma et l’étude
+        du patrimoine. Et quel plus bel écrin pour ce Janus mi artiste mi savant
+        que Rabat, ville aux mille visages !
       </>
     ),
     route: "preface",
   },
-  // {
-  //   id: uuidv4(),
-  //   slug: "rachid-maalal",
-  //   nom: "Rachid Maalal",
-  //   image: rachidMaalal,
-  //   role: "Directeur de la Société de développement régional de Rabat",
-  //   title:
-  //     "Préface de la Société de Développement Régional Rabat Région Patrimoine Historique (RRPH)",
-  //   description:
-  //     "C'est avec une immense fierté que la Société de Développement Régional Rabat Région Patrimoine Historique (RRPH) s'associe à la première édition du Festival international du film archéologique et patrimoine de Rabat. Cet événement d'envergure, qui se déroule dans la capitale du Royaume, inscrite sur la Liste du patrimoine mondial de l'UNESCO, illustre l'engagement continu des acteurs locaux pour la valorisation et la diffusion du patrimoine culturel et historique. Le bien inscrit 'Rabat, Capitale moderne et ville historique : un patrimoine en partage' porte en lui les strates de l’histoire et de la mémoire collective. Parmi ses joyaux figure le site archéologique de Chellah, l’une des huit composantes du bien inscrit, témoignage unique de la richesse historique de notre ville et de son rôle central dans la préservation du passé. Le festival offre une sélection exceptionnelle de films documentaires qui explorent la richesse du patrimoine archéologique mondial. Chaque projection est une invitation à la découverte, à la réflexion et à l’admiration devant l’ingéniosité et la créativité des civilisations passées. En tant que partenaire de cette première édition, RRPH réaffirme son engagement en faveur de la conservation et de la promotion du patrimoine. Nous espérons que cet événement contribuera à sensibiliser un large public à l'importance de préserver et de transmettre notre héritage aux générations futures. Nous souhaitons à tous les participants un festival riche en découvertes et en émotions, et remercions chaleureusement les organisateurs et tous ceux qui ont contribué à la réalisation de cet événement unique. ",
-  //   route: "preface",
-  // },
-  // {
-  //   id: uuidv4(),
-  //   slug: "agnes-humruzian",
-  //   nom: "Agnès Humruzian",
-  //   image: AgnèsHumruzian,
-  //   role: "Directrice générale de l’Institut Français du Maroc",
-  //   description: (
-  //     <>
-  //       Des murs épais de la mosquée de Tinmel, perchée dans les hauteurs de
-  //       l’Atlas, aux colonnes torsadées de Volubilis, en passant par les
-  //       intrigantes gravures rupestres d’Aït Ouazik, les exemples de la richesse
-  //       patrimoniale et archéologique du Maroc ne manquent pas. Pourtant, ce
-  //       remarquable héritage historique est souvent encore trop peu connu du
-  //       grand public. C’est à ce constat que vient répondre le lancement de la
-  //       première édition du Festival International du Film Archéologique et
-  //       Patrimonial (FIFAP). <br />
-  //       <br /> En mettant en avant des sites et lieux majeurs de l’histoire du
-  //       Maroc comme du reste du bassin méditerranéen, le FIFAP permettra de
-  //       faire découvrir à un large public des sites archéologiques et
-  //       patrimoniaux parfois encore trop confidentiels. À l’heure où la science
-  //       et ses acquis sont régulièrement bousculés et contestés, l’objectif de
-  //       médiation que s’est donné le FIFAP constitue un enjeu majeur et une
-  //       priorité. La connaissance du passé ne peut pas être cantonnée aux
-  //       amphithéâtres d’universités et aux colonnes de revues spécialisées :
-  //       elle doit pouvoir être partagée au sein de la société et participer à
-  //       une meilleure compréhension du monde qui nous entoure. Dans ce processus
-  //       de transmission du savoir, le film documentaire occupe indéniablement
-  //       une place de choix : au carrefour des démarches artistiques,
-  //       pédagogiques et scientifiques, il constitue un moyen de médiation
-  //       attractif et accessible. <br />
-  //       <br />
-  //       Mais diffuser ces films ce n’est pas seulement contribuer au partage des
-  //       savoirs, c’est aussi valoriser le travail précieux des chercheurs et des
-  //       scientifiques ainsi que des réalisateurs et des cinéastes. C’est
-  //       rappeler l’importance de la coopération internationale en matière de
-  //       recherche : les découvertes archéologiques et les avancées scientifiques
-  //       sont le fait d’équipes de chercheurs aux origines diverses et formés
-  //       dans de nombreux pays différents. La mise à l’honneur par le festival du
-  //       paléontologue français Yves Coppens vient témoigner du rôle clef joué
-  //       par les collaborations internationales dans le champ de la recherche,
-  //       parmi lesquelles on retrouve les relations privilégiées qui unissent les
-  //       équipes scientifiques marocaines et françaises dans le domaine
-  //       archéologique. <br />
-  //       <br />À la croisée de ces différents enjeux, le FIFAP constitue donc une
-  //       occasion unique d’échanger, d’apprendre et de découvrir, mais aussi de
-  //       s’émerveiller devant la richesse et la beauté du patrimoine historique
-  //       de l’humanité.
-  //     </>
-  //   ),
-  //   route: "preface",
-  // },
   {
     id: uuidv4(),
     slug: "khadija-benlamine",
@@ -255,67 +192,6 @@ export const prefaces = [
     ),
     route: "preface",
   },
-  // {
-  //   id: uuidv4(),
-  //   slug: "editorial",
-  //   nom: "Khadija Benlamine & Tahar BENREDJEB",
-  //   image: Khadija,
-  //   image2: Tahar,
-  //   title: "Éditorial",
-  //   role: "Directeur de la Société de développement régional de Rabat",
-  //   description: (
-  //     <>
-  //       Malgré cette richesse, le patrimoine culturel marocain, essentiellement
-  //       cantonné dans les congrès et les colloques scientifiques, reste mal
-  //       connu du grand public et des acteurs locaux et régionaux. Pas assez
-  //       valorisé, il n’arrive pas à constituer un levier de développement
-  //       durable. Néanmoins, la médiation du patrimoine, une préoccupation des
-  //       archéologues et acteurs culturels, pose des questions relevant de la
-  //       médiation scientifique et s’inscrit dans une approche de communication.
-  //       En effet la mise en scène du patrimoine pourrait se construire autour
-  //       d’un récit national pour instaurer une relation avec notre passé. Le
-  //       film documentaire constitue l'un des moyens de médiation les plus
-  //       attractifs, <br />
-  //       <br />
-  //       C'est la raison pour laquelle le Centre d’Études et de Recherches du
-  //       Patrimoine Archéologique et Anthropologique du Moyen Atlas (CERPAAM),
-  //       qui veut s'adresser à un large public, s'est lancé dans l'aventure en
-  //       créant le Festival International du Film Archéologique et Patrimonial de
-  //       Rabat (FIFAP) dont la première édition se déroulera du 23 au 26 avril
-  //       2025. <br />
-  //       <br />
-  //       Le CERPAAM a bénéficié du concours du Festival du Film d'Archéologie
-  //       d'Amiens créé il y a plus de trente ans, s'inscrivant ainsi dans les
-  //       politiques actuelles de coopérations franco- marocaines en matière
-  //       culturelle. Le FIFAP devient le premier rendez-vous des professionnels
-  //       du cinéma documentaire d’archéologie et du patrimoine en Afrique et dans
-  //       le monde Arabe. A ce titre, il rejoint le réseau des festivals du film
-  //       archéologique organisés à Narbonne et Pech Merle en France, Oiasso en
-  //       Espagne, Rovereto, Florence et Licodia Eubea en Italie, Athènes en
-  //       Grèce, Nyon en Suisse, Split, en Croatie et Arkhaios aux USA. <br />
-  //       <br />
-  //       Trente-et-un documentaires (dont dix-neuf en compétition), traitant
-  //       principalement des actualités archéologiques du bassin méditerranéen,
-  //       vous transporteront à travers le temps à la recherche de nos ancêtres
-  //       les plus lointains. Réalisateurs et archéologues, partageront avec les
-  //       spectateurs leurs passions et leurs savoirs et les accompagneront dans
-  //       ce voyage archéologique visuel et sonore. Les différentes thématiques
-  //       autour de la Préhistoire seront largement développées. C'est tout
-  //       natuellement que la séance d'inauguration, placée sous le thème «
-  //       Afrique du Nord : une réécriture de l’histoire humaine » sera consacrée
-  //       à la découverte de Jbel Irhoud. <br />
-  //       <br />
-  //       Durant le Festival, plusieurs interventions rendront hommage à Yves
-  //       Coppens, paléontologue et préhistorien et ami du Maroc. Deux conférences
-  //       et une présentation de livre seront également proposées au public.{" "}
-  //       <br />
-  //       <br />
-  //       Pour l'équipe du FIFAP, Khadia Benlamine, directrice du FIFAP, Tahar
-  //       Benredjeb directeur du Festival du Film d'Archéologie d'Amiens.
-  //     </>
-  //   ),
-  //   route: "preface",
-  // },
 ];
 export const comiteDorganisation = [
   {
@@ -522,7 +398,7 @@ export const memberJury = [
     route: "members",
     role: "Membre du Jury",
   },
-  
+
   {
     id: uuidv4(),
     slug: "abdelkhalek-lemjidi",
