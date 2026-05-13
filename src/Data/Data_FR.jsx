@@ -183,10 +183,10 @@ export const prefaces = [
         triomphe. <br />
         <br />
         Neuf sites marocains sont inscrits sur la Liste du Patrimoine Mondial de
-        l’UNESCO. Quinze autres éléments sont classés au patrimoine immatériel
+        l’UNESCO. Seize autres éléments sont classés au patrimoine immatériel
         de l’humanité. Témoins des civilisations anciennes, ils possèdent une
         valeur culturelle et scientifique exceptionnelle, témoignant d’une
-        singularité et d’une authenticité marocaines. Khadija Benlamine,
+        singularité et d’une authenticité marocaines. <br/><br/>Khadija Benlamine,
         directrice du FIFAP.{" "}
       </>
     ),

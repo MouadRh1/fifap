@@ -84,21 +84,22 @@ i18n.use(initReactI18next).init({
         hommage_joudia_conclusion:
           "Elle laisse derrière elle le parcours d'une femme d'exception, qui a consacré toute sa vie à faire reconnaître à l'archéologie marocaine la place éminente qu'elle mérite sur la scène de l'archéologie mondiale.",
 
-        hommage_chorfi_titre: "Hommage à Abderrahmane Chorfi (1948–2026)",
+        hommage_chorfi_titre:
+          "Abderrahmane CHORFI (1948-2026) : une vie au service du patrimoine",
         hommage_chorfi_p1:
-          "M. Abderrahmane Chorfi, Président fondateur de l'ICOMOS Maroc était architecte, urbaniste et professeur respecté, il a consacré sa vie à protéger et à valoriser le patrimoine architectural du Maroc.",
+          "Né à Rabat en 1948, le regretté Abderrahmane CHORFI fut une figure majeure de l'architecture et du patrimoine marocain depuis plus de cinquante ans. Diplômé à Paris dans les années 1970, il mena toute sa carrière à la croisée du terrain et de l'administration, convaincu que l'un ne va pas sans l'autre.",
         hommage_chorfi_p2:
-          "En 1997, M. Chorfi est devenu le premier Président de l'ICOMOS Maroc, en plus d'avoir participé à la petite équipe fondatrice ayant préparé la création du Comité national. Il occupa le poste de président de 1997 à 2013. Pendant ces années formatrices, il a renforcé la place du Comité dans les débats et projets nationaux sur le patrimoine. En parallèle, il siégea également en tant que membre au sein du Conseil d'Administration de l'ICOMOS entre 2002 et 2005.",
+          "L'architecte des institutions\n\nIl fonda la première école d'architecture du Maroc, l'ENA, et en prit la direction de 1980 à 1983, puis de 1999 à 2004. Pédagogue hors pair, il forma des générations d'architectes qui façonnent aujourd'hui le visage du Royaume. Sa conviction : transmettre, c'est déjà construire.\n\nEn 2004, il fut nommé Directeur Général de l'Urbanisme, fonction qu'il occupa jusqu'en 2010. À ce poste stratégique, il structura et modernisa le réseau des agences urbaines du Royaume, dotant le pays d'outils essentiels pour penser son développement.",
         hommage_chorfi_p3:
-          "Sous sa direction, l'ICOMOS Maroc a contribué à plusieurs initiatives d'importance nationale. M. Chorfi a notamment participé à la préparation du dossier de candidature de la ville de Rabat pour son inscription au patrimoine mondial, ainsi qu'à celle des dossiers de candidature de plusieurs autres sites au registre du patrimoine national du Maroc. Il avait été sollicité en 2024 comme expert par l'Unité de conseil et de suivi du patrimoine mondial de l'ICOMOS.",
+          "L'homme du patrimoine mondial\n\nEntre 1997 et 2013, Abderrahmane CHORFI devint le premier président de l'ICOMOS-Maroc et participa à la création du Comité National. Son engagement dépassa les frontières. Il siégea au Conseil International de l'ICOMOS de 2002 à 2005.\n\nSa vie durant, il s'est battu pour la protection et la valorisation du patrimoine marocain. Il contribua à la préparation de plusieurs dossiers d'inscription au patrimoine mondial de l'UNESCO, dont celui de Rabat, Capitale Moderne et Ville historique : Un patrimoine en partage, inscrit en 2012.",
         hommage_chorfi_p4:
-          "Enseignant engagé, M. Chorfi a fondé l'École nationale d'architecture (ENA) de Rabat. Il en a été directeur de 1980 à 1982 puis de 1999 à 2004. Il a joué un rôle déterminant en encourageant les étudiants en architecture à traiter des thèmes liés au patrimoine dans leurs projets de fin d'études.",
+          "L'amoureux de Rabat\n\nProfondément attaché à sa ville natale, il lui consacra l'ouvrage 'Rabat ville, guide architectural, 1914-1990'. Loin d'un simple inventaire, le livre décrypte les édifices de la Ville Nouvelle, construits au cours de cette période et en révèle les écritures architecturales : Art déco, néo-traditionnel et brutalisme.\n\nPensé comme un manuel pédagogique pour les écoles d'architecture, ce guide fut surtout une déclaration d'amour, celle d'un architecte du patrimoine à la cité qui l'a vu naître. Chaque page dit la même chose : Connaître Rabat, c'est déjà commencer à la protéger.",
         hommage_chorfi_p5:
-          "Au niveau national, M. Chorfi a occupé de 2004 à 2010 le poste de Directeur général de l'urbanisme, de l'architecture et de l'aménagement du territoire au Ministère du Logement, de l'Urbanisme et de l'Aménagement du territoire. Parmi ses principales réalisations professionnelles, on peut citer la direction personnelle du plan d'aménagement et de sauvegarde de la ville moderne de Rabat et du quartier des Habous de Diour Jamaâ. Ce travail a contribué à la reconnaissance et à la protection du patrimoine urbain du XXe siècle.",
+          "C'est à Rabat, en février 2026, que le regretté Abderrahmane CHORFI nous a quittés. Il s'en va rejoindre les pierres et les mémoires de cette ville qu'il a tant étudiée, enseignée et défendue.",
         hommage_chorfi_p6:
-          "Grâce à ses conseils, son érudition et sa générosité envers les jeunes générations, Abderrahmane Chorfi laisse une empreinte durable sur la culture architecturale du Maroc ainsi que dans le développement de l'ICOMOS Maroc. Le souvenir de son intégrité, de son engagement intellectuel et de sa conviction inébranlable de la valeur du patrimoine comme essentielle à l'identité collective et au développement durable, restera dans les mémoires.",
-        hommage_chorfi_conclusion:
           "En 2025, il nous avait fait l'honneur de participer au jury de la première édition du FIFAP.",
+        hommage_chorfi_conclusion:
+          "Abderrahmane CHORFI (1948-2026) : une vie au service du patrimoine",
 
         //conferences
 
@@ -326,7 +327,6 @@ i18n.use(initReactI18next).init({
 
         programme_2025: "برنامج 2025",
         programme_2026: "برنامج 2026",
-
 
         //footer
         footer_description:
