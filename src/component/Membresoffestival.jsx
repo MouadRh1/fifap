@@ -39,9 +39,12 @@ const DefaultAvatar = ({ name, className }) => {
 
 const Membresoffestival = () => {
   const { t, i18n } = useTranslation();
-  const swiperRefComite = useRef(null);
-  const swiperRefJury = useRef(null);
-  const swiperRefPreface = useRef(null);
+
+  // ✅ FIX: Utiliser des états pour stocker les instances Swiper
+  // (useRef seul peut causer des problèmes de synchronisation entre plusieurs swipers)
+  const [swiperComite, setSwiperComite] = useState(null);
+  const [swiperJury, setSwiperJury] = useState(null);
+  const [swiperPreface, setSwiperPreface] = useState(null);
 
   const [prefaces, setPrefaces] = useState([]);
   const [comiteDorganisation, setComiteDorganisation] = useState([]);
@@ -68,7 +71,6 @@ const Membresoffestival = () => {
     loadData();
   }, [i18n.language]);
 
-  // Fonction pour extraire le texte de description (gère les objets JSX)
   const getDescriptionText = (description) => {
     if (typeof description === "string") {
       return description;
@@ -86,13 +88,32 @@ const Membresoffestival = () => {
     return t("aucune_description");
   };
 
-  const renderSwiper = (data, title, ref, roleOrTitle) => {
+  // ✅ FIX: renderSwiper accepte maintenant l'instance swiper et son setter
+  const renderSwiper = (data, title, swiperInstance, setSwiperInstance, roleOrTitle) => {
     const isPreface = title === "Preface";
+
+    // ✅ FIX: logique prev/next inversée pour l'arabe (car dir="ltr" est forcé)
+    const handlePrev = () => {
+      if (isArabic) {
+        swiperInstance?.slideNext();
+      } else {
+        swiperInstance?.slidePrev();
+      }
+    };
+
+    const handleNext = () => {
+      if (isArabic) {
+        swiperInstance?.slidePrev();
+      } else {
+        swiperInstance?.slideNext();
+      }
+    };
 
     return (
       <div className="relative mt-10">
+        {/* Bouton GAUCHE */}
         <button
-          onClick={() => ref.current?.slidePrev()}
+          onClick={handlePrev}
           className={`absolute ${isArabic ? "right-[-10px]" : "left-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
         >
           <MdNavigateBefore
@@ -103,104 +124,120 @@ const Membresoffestival = () => {
 
         <Swiper
           className="px-10"
-          slidesPerView={2}
+          slidesPerView={3}
           spaceBetween={30}
-          loop={false}
+          loop={true}
           speed={800}
           modules={[Autoplay]}
-          onSwiper={(swiper) => (ref.current = swiper)}
+          onSwiper={(swiper) => setSwiperInstance(swiper)} // ✅ FIX: setState au lieu de ref.current
           dir="ltr"
           breakpoints={{
             0: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            // 1200: { slidesPerView: 3 },
+            1200: { slidesPerView: 3 },
           }}
         >
-          {data.map((member, index) => (
-            <SwiperSlide key={member.id || index}>
-              <motion.div
-                initial={{ opacity: 0, y: index % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.2 }}
-                className="bg-white p-6 my-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform flex flex-col h-full"
-              >
-                {/* Image */}
-                <div className="flex justify-center items-center mb-4">
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.nom}
-                      className="w-32 h-32 rounded-full object-cover border-4 border-gray-800 shadow-lg"
-                    />
+          {data.map((member, index) => {
+            let buttonText = "";
+            if (title === "Preface") {
+              if (member.slug === "khadija-benlamine") {
+                buttonText = t("presentation");
+              } else if (member.slug === "khadija-et-tahar") {
+                buttonText = "éditorial";
+              } else {
+                buttonText = t("preface");
+              }
+            } else {
+              buttonText = t("voir_plus");
+            }
+
+            return (
+              <SwiperSlide key={member.id || index}>
+                <motion.div
+                  initial={{ opacity: 0, y: index % 2 === 0 ? -100 : 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  className="bg-white p-6 my-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform flex flex-col h-full"
+                >
+                  {/* Image */}
+                  <div className="flex justify-center items-center mb-4">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.nom}
+                        className="w-32 h-32 rounded-full object-cover border-4 border-gray-800 shadow-lg"
+                      />
+                    ) : (
+                      <DefaultAvatar
+                        name={member.nom}
+                        className="w-32 h-32 border-4 border-gray-800"
+                      />
+                    )}
+                    {member.image2 && (
+                      <img
+                        src={member.image2}
+                        alt={member.nom}
+                        className="w-32 h-32 rounded-full object-cover border-4 border-gray-800 shadow-lg ml-2"
+                      />
+                    )}
+                  </div>
+
+                  {/* Nom */}
+                  <h3 className="text-lg font-semibold text-center uppercase text-gray-800 mt-2">
+                    {member.nom}
+                  </h3>
+
+                  {/* Description ou badge pour comité/jury */}
+                  {isPreface ? (
+                    <p className="mt-3 text-center text-gray-600 text-sm line-clamp-3 px-2">
+                      {getDescriptionText(member.description)}
+                    </p>
                   ) : (
-                    <DefaultAvatar
-                      name={member.nom}
-                      className="w-32 h-32 border-4 border-gray-800"
-                    />
+                    <>
+                      <div className="flex justify-center py-2 items-center">
+                        {member.role && (
+                          <span className="inline-flex items-center text-xs font-semibold text-white bg-blue-500 rounded-full px-2 py-1 text-center">
+                            {member.role}
+                          </span>
+                        )}
+                        {!member.role && roleOrTitle && (
+                          <span className="inline-flex items-center text-xs font-semibold text-white bg-blue-500 rounded-full px-2 py-1">
+                            {roleOrTitle}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-center text-gray-500 text-sm">
+                        {member.nationalite}
+                      </p>
+                      <p className="mt-2 text-center text-gray-600 text-sm line-clamp-2">
+                        {typeof member.description === "string"
+                          ? member.description.slice(0, 80) +
+                            (member.description.length > 80 ? "..." : "")
+                          : t("aucune_description")}
+                      </p>
+                    </>
                   )}
-                  {member.image2 && (
-                    <img
-                      src={member.image2}
-                      alt={member.nom}
-                      className="w-32 h-32 rounded-full object-cover border-4 border-gray-800 shadow-lg ml-2"
-                    />
-                  )}
-                </div>
 
-                {/* Nom */}
-                <h3 className="text-lg font-semibold text-center uppercase text-gray-800 mt-2">
-                  {member.nom}
-                </h3>
-
-                {/* Description ou badge pour comité/jury */}
-                {isPreface ? (
-                  <p className="mt-3 text-center text-gray-600 text-sm line-clamp-3 px-2">
-                    {getDescriptionText(member.description)}
-                  </p>
-                ) : (
-                  <>
-                    <div className="flex justify-center py-2 items-center">
-                      {member.role && (
-                        <span className="inline-flex items-center text-xs font-semibold text-white bg-blue-500 rounded-full px-2 py-1 text-center">
-                          {member.role}
-                        </span>
-                      )}
-                      {!member.role && roleOrTitle && (
-                        <span className="inline-flex items-center text-xs font-semibold text-white bg-blue-500 rounded-full px-2 py-1">
-                          {roleOrTitle}
-                        </span>
-                      )}
+                  {/* Bouton */}
+                  {buttonText && (
+                    <div className="mt-4 flex justify-center">
+                      <LearnMore
+                        path={member.route}
+                        name={member.slug}
+                        children={buttonText}
+                      />
                     </div>
-                    <p className="text-center text-gray-500 text-sm">
-                      {member.nationalite}
-                    </p>
-                    <p className="mt-2 text-center text-gray-600 text-sm line-clamp-2">
-                      {typeof member.description === "string"
-                        ? member.description.slice(0, 80) +
-                          (member.description.length > 80 ? "..." : "")
-                        : t("aucune_description")}
-                    </p>
-                  </>
-                )}
-
-                {/* Bouton Voir Plus - pour les préfaces : toujours "Préface", plus d'éditorial */}
-                <div className="mt-4 flex justify-center">
-                  <LearnMore
-                    path={member.route}
-                    name={member.slug}
-                    children={
-                      title === "Preface" ? t("preface") : t("voir_plus")
-                    }
-                  />
-                </div>
-              </motion.div>
-            </SwiperSlide>
-          ))}
+                  )}
+                </motion.div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
 
+        {/* Bouton DROIT */}
         <button
-          onClick={() => ref.current?.slideNext()}
+          onClick={handleNext}
           className={`absolute ${isArabic ? "left-[-10px]" : "right-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
         >
           <MdNavigateNext size={24} className={isArabic ? "rotate-180" : ""} />
@@ -230,7 +267,7 @@ const Membresoffestival = () => {
         </p>
 
         {prefaces.length > 0 &&
-          renderSwiper(prefaces, "Preface", swiperRefPreface)}
+          renderSwiper(prefaces, "Preface", swiperPreface, setSwiperPreface)}
 
         <h3 className="text-4xl font-bold text-[#ac5f2d] mb-4">
           {t("comite_organisation")}
@@ -240,7 +277,8 @@ const Membresoffestival = () => {
           renderSwiper(
             comiteDorganisation,
             "Comité d'Organisation",
-            swiperRefComite,
+            swiperComite,
+            setSwiperComite,
             t("comite_organisation"),
           )}
 
@@ -252,7 +290,8 @@ const Membresoffestival = () => {
           renderSwiper(
             memberJury,
             "Membres du Jury",
-            swiperRefJury,
+            swiperJury,
+            setSwiperJury,
             t("membre_jury"),
           )}
       </div>

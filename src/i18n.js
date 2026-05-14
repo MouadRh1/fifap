@@ -169,10 +169,14 @@ i18n.use(initReactI18next).init({
         politique_confidentialite: "Politique de confidentialité",
         mentions_legales: "Mentions légales",
         site_by: "Site par",
+
+        //
+        presentation: "Présentation",
       },
     },
     ar: {
       translation: {
+        presentation: "تقديم",
         // Navigation
         Accueil: "الرئيسية",
         Programme: "البرنامج",
