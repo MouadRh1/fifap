@@ -114,80 +114,65 @@ export const prefaces = [
     role: "Directrice Du Festival",
     description: (
       <>
-        Les premières fouilles archéologiques ont été effectuées dans les deux
-        sites de Volubilis et de Lexus de 1885 à 1889 par Henri de la Martinière
-        qui a édité plusieurs ouvrages sur le Maroc. Après l'instauration du
-        protectorat français au Maroc, des missions archéologiques ont été mises
-        en place afin de dévoiler les richesses archéologiques et patrimoniales
-        du pays. En 1931, le premier Musée archéologique de Rabat et le Service
-        des Antiquités sont créés. Il faut attendre le décret ministériel du 31
-        janvier 1985 pour que l'Institut National des Sciences de l'Archéologie
-        et du Patrimoine ouvre ses portes avec l'ambition d'une part de former
-        des étudiants et d'autre part d'initier et de promouvoir la recherche
-        archéologique. C'est ainsi que depuis trente ans de nombreux programmes
-        de recherche dirigés par des archéologues nationaux, souvent en
-        collaboration avec des établissements étrangers, ont mis au jour
-        d'importantes découvertes. <br /> <br /> Parmi les principales, citons
-        la découverte des plus anciens éléments de parure au monde dans la
-        Grotte de Bizmoune (Essaouira) datant de plus de 145000 ans ; celle des
-        plus anciens outils de confection de vêtements au Maroc, vieux de 120
-        000 ans, dans la grotte des Contrebandiers près de Rabat ; celle de la
-        plus ancienne trépanation connue à ce jour (12 000 ans BP) dans la
-        grotte de Tafoughalt dans les Beni-Snassen. De nombreux autres sites
-        reconnus, notamment des grottes, présentent des œuvres d'art rupestre,
-        des peintures, des gravures et des sculptures élaborées.
-      </>
-    ),
-    description2: (
-      <>
-        Depuis quelques années, les découvertes archéologiques se multiplient.
-        Celle des vestiges d'hominidés de Jbel Irhoud, les plus vieux Homo
-        Sapiens datés de plus 315 000 ans, ont suscité un intérêt universel.
-        L'identification, par une équipe de chercheurs marocains, britanniques
-        et italiens, à Oued Beht d'un site de production de céréales et de
-        céramiques renouvelle nos connaissances sur la complexité du Nord-Ouest
-        africain à la fin du Néolithique et sur ses interactions avec la
-        péninsule Ibérique. Une équipe d'archéologues dirigée par le professeur
-        Youssef Bokbot de l'Institut national des sciences de l'archéologie et
-        du patrimoine (INSAP) vient de mettre au jour le premier village
-        protohistorique connu du Maghreb, situé sur le site de Kach Kouch, dans
-        la province de Tétouan. Cette découverte remet en question les idées
-        reçues sur le développement des sociétés nord africaines avant l'arrivée
-        des Phéniciens. <br />
+        Depuis sa création, le Centre d'Etudes et de Recherches du Patrimoine
+        Archéologique et Anthropologique du Moyen Atlas (CERPAAM) a pour mission
+        la promotion et la valorisation du patrimoine archéologique et culturel
+        marocain. En parallèle de ses campagnes de prospections et de fouilles
+        archéologiques au Moyen Atlas menées depuis 2019, le CERPAAM développe
+        également des actions adressées au grand public dont la mise en place
+        d'un nouvel événement culturel et patrimonial : l'organisation de la
+        première édition du FIFAP en avril 2025.
         <br />
-        Le dynamisme de l'archéologie marocaine vient d'être récompensé, aux
-        Rencontres Archéologiques Narbonnaises, par le prix 2024 pour la
-        préservation par l'étude du patrimoine archéologique méditerranéen qui a
-        été attribué à la mission archéologique franco-marocaine « Sanctuaires
-        et forteresses almohades ». <br />
         <br />
-        Rabat, ville lumière et capitale du Maroc a été fondée au X siècle par
-        les Almohades sous le règne d'Abd El Moumen (1133-1163). Sous
-        l'impulsion de Yaqoub El Mansour (1184-1199), la ville va connaitre un
-        grand essor. Le souverain fait édifier une grande muraille jalonnée de
-        tours et percée de cinq portes. Il construit la mosquée de Hassan dont
-        la tour s'apparente aux minarets de la Koutoubia à Marrakech et de la
-        Giralda à Séville. Sidi Mohammed Ben Abdellah au 18ème siècle y
-        construit un palais royal. La ville va être érigée en capitale du pays
-        en 1912. <br />
+        La mise en scène du patrimoine pourrait se construire autour d'un récit
+        pour instaurer une relation avec notre passé. À ce titre, le film
+        documentaire constitue l'un des moyens de médiation les plus attractifs.
+        Il a bénéficié du concours du Festival du Film d'Archéologie d'Amiens
+        créé il y a plus de trente ans, s'inscrivant ainsi dans les politiques
+        actuelles de coopérations franco-marocaines en matière culturelle.
         <br />
-        L'histoire de Rabat s'enracine dans un passé très lointain, 400 000 ans,
-        par la présence de vestiges d'Homo erectus (Salé et Rabat-Kebibat). Les
-        grottes du littoral atlantique ont également livré des restes humains
-        appartenant à une civilisation atérienne propre au Nord de l'Afrique et
-        dont les datations remontent à plus de 92 000 ans. Le complexe
-        archéologique de Chellah, situé sur une colline dominant la vallée de
-        l'Oued Bouregreg, se compose d'une nécropole mérinide et de l'ancienne
-        cité romaine de Sala. Il est entouré d'une muraille et abrite une
-        mosquée, une médersa, un mausolée, un capitole, des thermes et un arc de
-        triomphe. <br />
         <br />
-        Neuf sites marocains sont inscrits sur la Liste du Patrimoine Mondial de
-        l'UNESCO. Seize autres éléments sont classés au patrimoine immatériel de
-        l'humanité. Témoins des civilisations anciennes, ils possèdent une
-        valeur culturelle et scientifique exceptionnelle, témoignant d'une
-        singularité et d'une authenticité marocaines.
-        <br /> <br />Khadija Benlamine, directrice du FIFAP.
+        Après un premier succès retentissant, le Festival International du Film
+        Archéologique et Patrimonial de Rabat revient pour une deuxième édition,
+        du 9 au 13 juin 2026. Placée sous le thème « Hommes, cultures,
+        territoires », cette édition nous plonge pendant une semaine dans un
+        voyage épique à travers le temps et l'espace. Elle proposera un
+        programme riche et diversifié à travers la projection de 22 films, dont
+        16 seront en compétition. Ces films retracent l'évolution culturelle de
+        l'humanité depuis la préhistoire jusqu'à la période antique.
+        <br />
+        <br />
+        Le FIFAP organisé à Rabat, capitale du Royaume et ville Lumière, devient
+        le premier rendez-vous des professionnels du cinéma documentaire
+        d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il
+        rejoint le réseau des festivals du film archéologique organisés à
+        Amiens, Narbonne et Pech Merle (France), Oiasso (Espagne), Rovereto,
+        Florence et Licodia Eubea (Italie), Athènes (Grèce), Nyon (Suisse),
+        Split (Croatie) et Arkhaios (USA).
+        <br />
+        <br />
+        Sous la thématique de sa première édition « Afrique du Nord, pour une
+        réécriture de l'histoire humaine », une trentaine de films traitant
+        principalement de la Préhistoire et des actualités archéologiques ont
+        transporté le public de Rabat du 23 au 27 avril 2025, à travers le
+        temps, à la recherche de nos ancêtres les plus lointains. Réalisateurs
+        et archéologues ont partagé avec les spectateurs leurs passions et leurs
+        savoirs et les ont accompagnés dans ce voyage archéologique visuel et
+        sonore.
+        <br />
+        <br />
+        Comme pour la première édition, des archéologues, des architectes, des
+        paléontologues et des chercheurs éminents et de renommée internationale
+        dans les domaines du patrimoine seront aussi au rendez-vous. Ils
+        animeront des conférences sur les grandes découvertes archéologiques
+        récentes au Maroc, dédiées au grand public. Le festival sera ainsi un
+        espace de rencontres et offrira une occasion unique pour le public
+        marocain de découvrir et de s'ouvrir sur les nouvelles expériences de
+        production cinématographique dans les domaines de l'archéologie et du
+        patrimoine.
+        <br />
+        <br />
+        Khadija Benlamine, directrice du FIFAP.
       </>
     ),
     route: "preface",
