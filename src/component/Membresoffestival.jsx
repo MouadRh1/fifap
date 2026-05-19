@@ -11,11 +11,13 @@ import {
   prefaces as prefacesFR,
   comiteDorganisation as comiteFR,
   memberJury as juryFR,
+  juryEtudiant as juryEtudiantFR,
 } from "../Data/Data_FR";
 import {
   prefaces as prefacesAR,
   comiteDorganisation as comiteAR,
   memberJury as juryAR,
+  juryEtudiant as juryEtudiantAR,
 } from "../Data/Data_AR";
 
 const DefaultAvatar = ({ name, className }) => {
@@ -40,15 +42,15 @@ const DefaultAvatar = ({ name, className }) => {
 const Membresoffestival = () => {
   const { t, i18n } = useTranslation();
 
-  // ✅ FIX: Utiliser des états pour stocker les instances Swiper
-  // (useRef seul peut causer des problèmes de synchronisation entre plusieurs swipers)
   const [swiperComite, setSwiperComite] = useState(null);
   const [swiperJury, setSwiperJury] = useState(null);
+  const [swiperJuryEtudiant, setSwiperJuryEtudiant] = useState(null);
   const [swiperPreface, setSwiperPreface] = useState(null);
 
   const [prefaces, setPrefaces] = useState([]);
   const [comiteDorganisation, setComiteDorganisation] = useState([]);
   const [memberJury, setMemberJury] = useState([]);
+  const [juryEtudiant, setJuryEtudiant] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const isArabic = i18n.language === "ar";
@@ -61,10 +63,12 @@ const Membresoffestival = () => {
         setPrefaces(prefacesAR);
         setComiteDorganisation(comiteAR);
         setMemberJury(juryAR);
+        setJuryEtudiant(juryEtudiantAR);
       } else {
         setPrefaces(prefacesFR);
         setComiteDorganisation(comiteFR);
         setMemberJury(juryFR);
+        setJuryEtudiant(juryEtudiantFR);
       }
       setLoading(false);
     };
@@ -88,11 +92,15 @@ const Membresoffestival = () => {
     return t("aucune_description");
   };
 
-  // ✅ FIX: renderSwiper accepte maintenant l'instance swiper et son setter
-  const renderSwiper = (data, title, swiperInstance, setSwiperInstance, roleOrTitle) => {
+  const renderSwiper = (
+    data,
+    title,
+    swiperInstance,
+    setSwiperInstance,
+    roleOrTitle,
+  ) => {
     const isPreface = title === "Preface";
 
-    // ✅ FIX: logique prev/next inversée pour l'arabe (car dir="ltr" est forcé)
     const handlePrev = () => {
       if (isArabic) {
         swiperInstance?.slideNext();
@@ -111,7 +119,6 @@ const Membresoffestival = () => {
 
     return (
       <div className="relative mt-10">
-        {/* Bouton GAUCHE */}
         <button
           onClick={handlePrev}
           className={`absolute ${isArabic ? "right-[-10px]" : "left-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
@@ -129,7 +136,7 @@ const Membresoffestival = () => {
           loop={true}
           speed={800}
           modules={[Autoplay]}
-          onSwiper={(swiper) => setSwiperInstance(swiper)} // ✅ FIX: setState au lieu de ref.current
+          onSwiper={(swiper) => setSwiperInstance(swiper)}
           dir="ltr"
           breakpoints={{
             0: { slidesPerView: 1 },
@@ -143,7 +150,7 @@ const Membresoffestival = () => {
               if (member.slug === "khadija-benlamine") {
                 buttonText = t("presentation");
               } else if (member.slug === "khadija-et-tahar") {
-                buttonText = "éditorial";
+                buttonText = t("editorial");
               } else {
                 buttonText = t("preface");
               }
@@ -160,7 +167,6 @@ const Membresoffestival = () => {
                   viewport={{ once: true, amount: 0.2 }}
                   className="bg-white p-6 my-2 rounded-lg shadow-lg hover:shadow-xl transition-all transform flex flex-col h-full"
                 >
-                  {/* Image */}
                   <div className="flex justify-center items-center mb-4">
                     {member.image ? (
                       <img
@@ -183,12 +189,10 @@ const Membresoffestival = () => {
                     )}
                   </div>
 
-                  {/* Nom */}
                   <h3 className="text-lg font-semibold text-center uppercase text-gray-800 mt-2">
                     {member.nom}
                   </h3>
 
-                  {/* Description ou badge pour comité/jury */}
                   {isPreface ? (
                     <p className="mt-3 text-center text-gray-600 text-sm line-clamp-3 px-2">
                       {getDescriptionText(member.description)}
@@ -219,7 +223,6 @@ const Membresoffestival = () => {
                     </>
                   )}
 
-                  {/* Bouton */}
                   {buttonText && (
                     <div className="mt-4 flex justify-center">
                       <LearnMore
@@ -235,7 +238,6 @@ const Membresoffestival = () => {
           })}
         </Swiper>
 
-        {/* Bouton DROIT */}
         <button
           onClick={handleNext}
           className={`absolute ${isArabic ? "left-[-10px]" : "right-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
@@ -259,6 +261,7 @@ const Membresoffestival = () => {
   return (
     <div className="py-3 bg-orange-100">
       <div className="max-w-screen-2xl mx-auto px-6">
+        {/* Préfaces */}
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ac5f2d] mt-4 mb-4">
           {t("prefaces_titre")}
         </h3>
@@ -269,6 +272,7 @@ const Membresoffestival = () => {
         {prefaces.length > 0 &&
           renderSwiper(prefaces, "Preface", swiperPreface, setSwiperPreface)}
 
+        {/* Comité d'organisation */}
         <h3 className="text-4xl font-bold text-[#ac5f2d] mb-4">
           {t("comite_organisation")}
         </h3>
@@ -282,6 +286,7 @@ const Membresoffestival = () => {
             t("comite_organisation"),
           )}
 
+        {/* Membres du Jury */}
         <h3 className="text-4xl font-bold text-[#ac5f2d] mt-16 mb-4">
           {t("membres_jury")}
         </h3>
@@ -293,6 +298,23 @@ const Membresoffestival = () => {
             swiperJury,
             setSwiperJury,
             t("membre_jury"),
+          )}
+
+        {/* Jury Étudiant */}
+        <h3 className="text-4xl font-bold text-[#ac5f2d] mt-16 mb-4">
+          {t("jury_etudiant")}
+        </h3>
+        <SeeMore
+          path="moremembers"
+          children={t("voir_tous_membres_jury_etudiant")}
+        />
+        {juryEtudiant.length > 0 &&
+          renderSwiper(
+            juryEtudiant,
+            "Jury Étudiant",
+            swiperJuryEtudiant,
+            setSwiperJuryEtudiant,
+            t("membre_jury_etudiant"),
           )}
       </div>
     </div>

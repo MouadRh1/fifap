@@ -463,3 +463,26 @@ export const memberJury = [
     role: "عضو لجنة التحكيم",
   },
 ];
+export const juryEtudiant = [
+  {
+    id: uuidv4(),
+    slug: "sara-zhiro",
+    nom: "سارة زيرو",
+    image: null,
+    description: "طالبة في المعهد الوطني للموسيقى والفنون الكوريغرافية (السنة الأولى)",
+    nationalite: "(المغرب)",
+    route: "members",
+    role: "عضو لجنة الطلاب",
+  },
+  {
+    id: uuidv4(),
+    slug: "yamane-aya",
+    nom: "يمان آية",
+    image: null,
+    description: "طالبة في المدرسة الوطنية للهندسة المعمارية بالرباط (السنة الأولى)",
+    nationalite: "(المغرب)",
+    route: "members",
+    role: "عضو لجنة الطلاب",
+  },
+  // ... autres membres
+];

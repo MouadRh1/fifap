@@ -3,12 +3,21 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { motion } from "framer-motion";
-import { prefaces as prefacesFR, comiteDorganisation as comiteFR, memberJury as juryFR } from "../Data/Data_FR";
-import { prefaces as prefacesAR, comiteDorganisation as comiteAR, memberJury as juryAR } from "../Data/Data_AR";
+import {
+  prefaces as prefacesFR,
+  comiteDorganisation as comiteFR,
+  memberJury as juryFR,
+  juryEtudiant as juryEtudiantFR,
+} from "../Data/Data_FR";
+import {
+  prefaces as prefacesAR,
+  comiteDorganisation as comiteAR,
+  memberJury as juryAR,
+  juryEtudiant as juryEtudiantAR,
+} from "../Data/Data_AR";
 
 // Composant pour l'image par défaut
 const DefaultImage = ({ name, className }) => {
-  // Récupérer les initiales du nom
   const getInitials = (fullName) => {
     return fullName
       .split(" ")
@@ -20,7 +29,7 @@ const DefaultImage = ({ name, className }) => {
 
   return (
     <div
-      className={`${className} bg-gradient-to-br from-[#ac5f2d] to-[#e67e22] flex flex-col items-center justify-center`}
+      className={`${className} bg-gradient-to-br from-[#ac5f2d] to-[#e67e22] flex flex-col items-center justify-center rounded-lg`}
     >
       <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-4">
         <span className="text-5xl font-bold text-white">
@@ -34,22 +43,23 @@ const DefaultImage = ({ name, className }) => {
 
 export default function MembersItem() {
   const navigate = useNavigate();
-  const { slug } = useParams(); // ← Changer de 'nom' à 'slug'
-  const { i18n, t } = useTranslation();
+  const { slug } = useParams();
+  const { t, i18n } = useTranslation();
   const [member, setMember] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadMember = () => {
-      const currentLang = i18n.language || localStorage.getItem('language') || 'fr';
+      const currentLang = i18n.language || localStorage.getItem("language") || "fr";
       
       // Choisir les données selon la langue
-      const prefacesData = currentLang === 'ar' ? prefacesAR : prefacesFR;
-      const comiteData = currentLang === 'ar' ? comiteAR : comiteFR;
-      const juryData = currentLang === 'ar' ? juryAR : juryFR;
+      const prefacesData = currentLang === "ar" ? prefacesAR : prefacesFR;
+      const comiteData = currentLang === "ar" ? comiteAR : comiteFR;
+      const juryData = currentLang === "ar" ? juryAR : juryFR;
+      const juryEtudiantData = currentLang === "ar" ? juryEtudiantAR : juryEtudiantFR;
       
       // Chercher le membre dans tous les tableaux par son slug
-      const foundMember = [...prefacesData, ...comiteData, ...juryData].find(
+      const foundMember = [...prefacesData, ...comiteData, ...juryData, ...juryEtudiantData].find(
         (item) => item.slug === slug
       );
       
@@ -64,7 +74,6 @@ export default function MembersItem() {
     navigate(-1);
   };
 
-  // Affichage pendant le chargement
   if (loading) {
     return (
       <div className="py-20 max-w-6xl mx-auto px-6 text-center">
@@ -84,7 +93,6 @@ export default function MembersItem() {
     );
   }
 
-  // Si aucun membre trouvé, afficher un message
   if (!member) {
     return (
       <div className="py-20 max-w-6xl mx-auto px-6 text-center">
@@ -119,7 +127,7 @@ export default function MembersItem() {
 
       {/* Contenu du membre */}
       <div className="mt-8 flex flex-col md:flex-row gap-8 items-start">
-        {/* Image - avec gestion du cas où l'image n'existe pas */}
+        {/* Image */}
         <motion.div
           className="w-full md:w-80 lg:w-96 rounded-lg overflow-hidden shadow-lg flex-shrink-0"
           whileHover={{ scale: 1.02 }}

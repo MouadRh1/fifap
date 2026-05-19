@@ -21,14 +21,19 @@ import fadhila from "../Image/fadhila.jpeg";
 import françoise from "../Image/Françoise.jpeg";
 import fouad from "../Image/Fouad.jpeg";
 import amal from "../Image/amal-ayouch.jpg";
-import lemjidi from "../Image/lemjidi-abdelkhalek.jpg";
+import lemjidi from "../Image/lemjidi.jpeg";
 import chennaoui from "../Image/chennaoui.png";
 import rachidBenzine from "../Image/rachid-benzine.jpg";
-import hakim from "../Image/Hakim_Belabbes.jpg";
+import hakim from "../Image/hakim.jpeg";
 import nadia from "../Image/nadia-achour.png";
 import meriem from "../Image/meriem_ait.jpeg";
 import djillali from "../Image/Djillali-Hadjouis.png";
 import basma from "../Image/basma.jpeg";
+import basmaOumaima from "../Image/basma-oumaima.jpeg";
+import haroune from "../Image/haroune-hidaoui.jpeg";
+import yamane from "../Image/yamane-aya.jpeg";
+import ghita from "../Image/ghita-elouali.jpeg";
+import saraZhiro from "../Image/sara-zhiro.jpeg";
 
 import { v4 as uuidv4 } from "uuid";
 export const prefaces = [
@@ -399,7 +404,7 @@ export const memberJury = [
     nom: "Amal Ayouch",
     image: amal, // À remplacer par l'image correspondante
     description:
-      "Figure emblématique du cinéma et du théâtre marocain. Pharmacienne de formation, elle a choisi la scène pour devenir une actrice engagée, souvent récompensée pour ses rôles de femmes fortes et complexes. Elle est mondialement connue pour ses collaborations avec des réalisateurs comme Nabil Ayouch (Les Chevaux de Dieu) ou Farida Benlyazid, et pour son activisme en faveur des droits des femmes et de la culture.",
+      "Amal Ayouch est l’une des figures phares représentative de la scène culturelle marocaine, réputée notamment pour ses choix artistiques exigeants et engagés. Sa carrière est riche d’une grande variété de rôles dans des films marocains tels que Ali Zaoua, Destin de femmes, les Anges de Satan, L'Orchestre de minuit, et internationaux, The Jesus Code, Palestina, Gladiator 2.. Son parcours théâtral dans Antigone, En attendant Godot  de Samuel Beckett, Ophélie n’est pas morte de Nabyl Lahlou, Roméo et Juliette ou encore l’adaptation de La Civilisation ma mère de Driss Chraibi, et des ouvrages de Fatéma Mernissi…témoigne de son amour pour les mots et le texte. Femme engagée, elle est marraine de l’association « Solidarité Féminine », pour qui elle a recueilli les témoignages de mères célibataires, et les a réécrit pour donner lieu à une pièce de théâtre « Violenscène », puis un livre « A haute voix »",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury",
@@ -455,9 +460,66 @@ export const memberJury = [
     nom: "Abdelkhalek Lemjidi",
     image: lemjidi, // À remplacer par l'image correspondante
     description:
-      "Chercheur passionné et explorateur de terrain dédié à l'étude de la biodiversité en milieux arides. Spécialiste de la faune sauvage, il allie une expertise scientifique rigoureuse à une présence constante sur le terrain pour documenter et protéger des espèces souvent méconnues. À travers ses recherches et ses expéditions dans les paysages rocheux, il s'efforce de transmettre une meilleure compréhension des écosystèmes et de sensibiliser à la préservation du patrimoine naturel.",
+      "Abdelkhalek Lemjidi est lauréat (1990) de l'Université de Leningrad (ex-URSS), archéologue spécialisé dans l'art rupestre, professeur (à la retraite) au département de préhistoire de l'Institut national des sciences de l'archéologie et du patrimoine (INSAP) de Rabat. Il mène des recherches archéologiques et paléopaysagères au Sud marocain, principalement dans le bassin de la Saqia Al Hamra à Smara.",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury",
+  },
+];
+export const juryEtudiant = [
+  {
+    id: uuidv4(),
+    slug: "sara-zhiro",
+    nom: "Sara ZHIRO",
+    image: saraZhiro, // À remplacer par l'image correspondante
+    description:
+      "Étudiante à l'Institut national de musique et des arts chorégraphiques (première année)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "yamane-aya",
+    nom: "Yamane Aya",
+    image: yamane, // À remplacer par l'image correspondante
+    description:
+      "Étudiante à l'École nationale d'architecture de Rabat (première année)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "haroune-el-hidaoui",
+    nom: "Haroune EL HIDAOUI",
+    image: haroune, // À remplacer par l'image correspondante
+    description:
+      "Étudiant en 6ème année à l'école d'architecture de Rabat (UIR)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "ghita-louali",
+    nom: "Ghita LOUALI",
+    image: ghita, // À remplacer par l'image correspondante
+    description:
+      "Étudiante à l'Institut supérieur d'art dramatique et d'animation culturelle (3ème année)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "basma-oumaima",
+    nom: "Basma Oumaima",
+    image: basmaOumaima, // À remplacer par l'image correspondante
+    description:
+      "Étudiante en 3ème année cycle fondamentale à l'INSAP (option archéologie subaquatique)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
   },
 ];

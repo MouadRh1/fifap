@@ -172,6 +172,13 @@ i18n.use(initReactI18next).init({
 
         //
         presentation: "Présentation",
+
+        //jury etudiant
+
+        jury_etudiant: "Jury Étudiant",
+        membre_jury_etudiant: "Membre du Jury Étudiant",
+        voir_tous_membres_jury_etudiant:
+          "Voir tous les membres du jury étudiant",
       },
     },
     ar: {
@@ -346,6 +353,10 @@ i18n.use(initReactI18next).init({
         politique_confidentialite: "سياسة الخصوصية",
         mentions_legales: "إشعار قانوني",
         site_by: "تصميم",
+
+        jury_etudiant: "لجنة الطلاب",
+        membre_jury_etudiant: "عضو لجنة الطلاب",
+        voir_tous_membres_jury_etudiant: "عرض جميع أعضاء لجنة الطلاب",
       },
     },
   },
