@@ -100,6 +100,14 @@ const Membresoffestival = () => {
     roleOrTitle,
   ) => {
     const isPreface = title === "Preface";
+    const slideCount = data.length;
+    
+    // Calcul dynamique du nombre de slides par vue
+    const getSlidesPerView = () => {
+      if (slideCount === 1) return 1;
+      if (slideCount === 2) return 2;
+      return 3;
+    };
 
     const handlePrev = () => {
       if (isArabic) {
@@ -117,31 +125,36 @@ const Membresoffestival = () => {
       }
     };
 
+    // Ne pas afficher les boutons de navigation s'il n'y a qu'un seul élément
+    const showNavigation = slideCount > 1;
+
     return (
       <div className="relative mt-10">
-        <button
-          onClick={handlePrev}
-          className={`absolute ${isArabic ? "right-[-10px]" : "left-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
-        >
-          <MdNavigateBefore
-            size={24}
-            className={isArabic ? "rotate-180" : ""}
-          />
-        </button>
+        {showNavigation && (
+          <button
+            onClick={handlePrev}
+            className={`absolute ${isArabic ? "right-[-10px]" : "left-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
+          >
+            <MdNavigateBefore
+              size={24}
+              className={isArabic ? "rotate-180" : ""}
+            />
+          </button>
+        )}
 
         <Swiper
           className="px-10"
-          slidesPerView={3}
+          slidesPerView={getSlidesPerView()}
           spaceBetween={30}
-          loop={true}
+          loop={slideCount >= 3}
           speed={800}
           modules={[Autoplay]}
           onSwiper={(swiper) => setSwiperInstance(swiper)}
           dir="ltr"
           breakpoints={{
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
+            0: { slidesPerView: Math.min(1, slideCount) },
+            768: { slidesPerView: Math.min(2, slideCount) },
+            1200: { slidesPerView: Math.min(3, slideCount) },
           }}
         >
           {data.map((member, index) => {
@@ -238,12 +251,14 @@ const Membresoffestival = () => {
           })}
         </Swiper>
 
-        <button
-          onClick={handleNext}
-          className={`absolute ${isArabic ? "left-[-10px]" : "right-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
-        >
-          <MdNavigateNext size={24} className={isArabic ? "rotate-180" : ""} />
-        </button>
+        {showNavigation && (
+          <button
+            onClick={handleNext}
+            className={`absolute ${isArabic ? "left-[-10px]" : "right-[-10px]"} top-1/2 -translate-y-1/2 bg-gray-800 shadow-md p-3 rounded-full text-white cursor-pointer hover:bg-[#ff7e2f] transition-all z-10`}
+          >
+            <MdNavigateNext size={24} className={isArabic ? "rotate-180" : ""} />
+          </button>
+        )}
       </div>
     );
   };

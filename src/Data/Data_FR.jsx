@@ -113,78 +113,78 @@ export const prefaces = [
     ),
     route: "preface",
   },
-  {
-    id: uuidv4(),
-    slug: "khadija-benlamine",
-    nom: "Khadija Benlamine",
-    image: Khadija,
-    title: "Archéologie, Quelques repères historiques",
-    role: "Directrice Du Festival",
-    description: (
-      <>
-        Depuis sa création, le Centre d'Etudes et de Recherches du Patrimoine
-        Archéologique et Anthropologique du Moyen Atlas (CERPAAM) a pour mission
-        la promotion et la valorisation du patrimoine archéologique et culturel
-        marocain. En parallèle de ses campagnes de prospections et de fouilles
-        archéologiques au Moyen Atlas menées depuis 2019, le CERPAAM développe
-        également des actions adressées au grand public dont la mise en place
-        d'un nouvel événement culturel et patrimonial : l'organisation de la
-        première édition du FIFAP en avril 2025.
-        <br />
-        <br />
-        La mise en scène du patrimoine pourrait se construire autour d'un récit
-        pour instaurer une relation avec notre passé. À ce titre, le film
-        documentaire constitue l'un des moyens de médiation les plus attractifs.
-        Il a bénéficié du concours du Festival du Film d'Archéologie d'Amiens
-        créé il y a plus de trente ans, s'inscrivant ainsi dans les politiques
-        actuelles de coopérations franco-marocaines en matière culturelle.
-        <br />
-        <br />
-        Après un premier succès retentissant, le Festival International du Film
-        Archéologique et Patrimonial de Rabat revient pour une deuxième édition,
-        du 9 au 13 juin 2026. Placée sous le thème « Hommes, cultures,
-        territoires », cette édition nous plonge pendant une semaine dans un
-        voyage épique à travers le temps et l'espace. Elle proposera un
-        programme riche et diversifié à travers la projection de 22 films, dont
-        16 seront en compétition. Ces films retracent l'évolution culturelle de
-        l'humanité depuis la préhistoire jusqu'à la période antique.
-        <br />
-        <br />
-        Le FIFAP organisé à Rabat, capitale du Royaume et ville Lumière, devient
-        le premier rendez-vous des professionnels du cinéma documentaire
-        d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il
-        rejoint le réseau des festivals du film archéologique organisés à
-        Amiens, Narbonne et Pech Merle (France), Oiasso (Espagne), Rovereto,
-        Florence et Licodia Eubea (Italie), Athènes (Grèce), Nyon (Suisse),
-        Split (Croatie) et Arkhaios (USA).
-        <br />
-        <br />
-        Sous la thématique de sa première édition « Afrique du Nord, pour une
-        réécriture de l'histoire humaine », une trentaine de films traitant
-        principalement de la Préhistoire et des actualités archéologiques ont
-        transporté le public de Rabat du 23 au 27 avril 2025, à travers le
-        temps, à la recherche de nos ancêtres les plus lointains. Réalisateurs
-        et archéologues ont partagé avec les spectateurs leurs passions et leurs
-        savoirs et les ont accompagnés dans ce voyage archéologique visuel et
-        sonore.
-        <br />
-        <br />
-        Comme pour la première édition, des archéologues, des architectes, des
-        paléontologues et des chercheurs éminents et de renommée internationale
-        dans les domaines du patrimoine seront aussi au rendez-vous. Ils
-        animeront des conférences sur les grandes découvertes archéologiques
-        récentes au Maroc, dédiées au grand public. Le festival sera ainsi un
-        espace de rencontres et offrira une occasion unique pour le public
-        marocain de découvrir et de s'ouvrir sur les nouvelles expériences de
-        production cinématographique dans les domaines de l'archéologie et du
-        patrimoine.
-        <br />
-        <br />
-        Khadija Benlamine, directrice du FIFAP.
-      </>
-    ),
-    route: "preface",
-  },
+  // {
+  //   id: uuidv4(),
+  //   slug: "khadija-benlamine",
+  //   nom: "Khadija Benlamine",
+  //   image: Khadija,
+  //   title: "Archéologie, Quelques repères historiques",
+  //   role: "Directrice Du Festival",
+  //   description: (
+  //     <>
+  //       Depuis sa création, le Centre d'Etudes et de Recherches du Patrimoine
+  //       Archéologique et Anthropologique du Moyen Atlas (CERPAAM) a pour mission
+  //       la promotion et la valorisation du patrimoine archéologique et culturel
+  //       marocain. En parallèle de ses campagnes de prospections et de fouilles
+  //       archéologiques au Moyen Atlas menées depuis 2019, le CERPAAM développe
+  //       également des actions adressées au grand public dont la mise en place
+  //       d'un nouvel événement culturel et patrimonial : l'organisation de la
+  //       première édition du FIFAP en avril 2025.
+  //       <br />
+  //       <br />
+  //       La mise en scène du patrimoine pourrait se construire autour d'un récit
+  //       pour instaurer une relation avec notre passé. À ce titre, le film
+  //       documentaire constitue l'un des moyens de médiation les plus attractifs.
+  //       Il a bénéficié du concours du Festival du Film d'Archéologie d'Amiens
+  //       créé il y a plus de trente ans, s'inscrivant ainsi dans les politiques
+  //       actuelles de coopérations franco-marocaines en matière culturelle.
+  //       <br />
+  //       <br />
+  //       Après un premier succès retentissant, le Festival International du Film
+  //       Archéologique et Patrimonial de Rabat revient pour une deuxième édition,
+  //       du 9 au 13 juin 2026. Placée sous le thème « Hommes, cultures,
+  //       territoires », cette édition nous plonge pendant une semaine dans un
+  //       voyage épique à travers le temps et l'espace. Elle proposera un
+  //       programme riche et diversifié à travers la projection de 22 films, dont
+  //       16 seront en compétition. Ces films retracent l'évolution culturelle de
+  //       l'humanité depuis la préhistoire jusqu'à la période antique.
+  //       <br />
+  //       <br />
+  //       Le FIFAP organisé à Rabat, capitale du Royaume et ville Lumière, devient
+  //       le premier rendez-vous des professionnels du cinéma documentaire
+  //       d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il
+  //       rejoint le réseau des festivals du film archéologique organisés à
+  //       Amiens, Narbonne et Pech Merle (France), Oiasso (Espagne), Rovereto,
+  //       Florence et Licodia Eubea (Italie), Athènes (Grèce), Nyon (Suisse),
+  //       Split (Croatie) et Arkhaios (USA).
+  //       <br />
+  //       <br />
+  //       Sous la thématique de sa première édition « Afrique du Nord, pour une
+  //       réécriture de l'histoire humaine », une trentaine de films traitant
+  //       principalement de la Préhistoire et des actualités archéologiques ont
+  //       transporté le public de Rabat du 23 au 27 avril 2025, à travers le
+  //       temps, à la recherche de nos ancêtres les plus lointains. Réalisateurs
+  //       et archéologues ont partagé avec les spectateurs leurs passions et leurs
+  //       savoirs et les ont accompagnés dans ce voyage archéologique visuel et
+  //       sonore.
+  //       <br />
+  //       <br />
+  //       Comme pour la première édition, des archéologues, des architectes, des
+  //       paléontologues et des chercheurs éminents et de renommée internationale
+  //       dans les domaines du patrimoine seront aussi au rendez-vous. Ils
+  //       animeront des conférences sur les grandes découvertes archéologiques
+  //       récentes au Maroc, dédiées au grand public. Le festival sera ainsi un
+  //       espace de rencontres et offrira une occasion unique pour le public
+  //       marocain de découvrir et de s'ouvrir sur les nouvelles expériences de
+  //       production cinématographique dans les domaines de l'archéologie et du
+  //       patrimoine.
+  //       <br />
+  //       <br />
+  //       Khadija Benlamine, directrice du FIFAP.
+  //     </>
+  //   ),
+  //   route: "preface",
+  // },
   {
     id: uuidv4(),
     slug: "khadija-et-tahar",
@@ -541,7 +541,7 @@ export const juryEtudiant = [
     nom: "Yamane Aya",
     image: yamane,
     description:
-      "Étudiante à l'École nationale d'architecture de Rabat (première année)",
+      "Étudiante en sixième année à l'École nationale d'architecture de Rabat",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury Étudiant",

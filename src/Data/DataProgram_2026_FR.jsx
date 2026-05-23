@@ -30,6 +30,7 @@ import youssefBokbot from "./../Image/Youssef-Bokbot.png";
 import drissOuarhache from "./../Image/Driss-Ouarhache.png";
 import sofia from "./../Image/sofia-mestari.jpeg";
 import Diner from "./../Image/Diner.webp";
+import atay from "./../Image/atay.jpg";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -66,7 +67,7 @@ const ProgramData2026_FR = [
       {
         a_id: 2,
         a_title: "Cocktail",
-        a_image: null,
+        a_image: atay,
         a_description: "",
       },
     ],
@@ -540,13 +541,6 @@ const ProgramData2026_FR = [
     description: "Remise des prix et concert de clôture",
     activities: [
       {
-        a_id: 24,
-        a_title: "Cérémonie de clôture – Palmarès",
-        a_image: null,
-        a_description:
-          "Le jury décerne deux prix : le Grand Prix du Festival et le prix du meilleur apport scientifique. Un jury d'étudiants décerne également un prix.",
-      },
-      {
         a_id: 25,
         a_title: "Concert de clôture - Sofia Mestari",
         // a_speaker: "Sofia Mestari",
@@ -569,6 +563,13 @@ Le premier extrait de ce nouvel opus est "AFRICA", chanson réalisée en collabo
 
 En avril 2026, Sofia Mestari organise la première édition du Concert "VOICES OF AFRICA", itinérant et qui réunit plusieurs artistes de renom du Continent pour chanter ensemble l'unité Africaine et la solidarité puisque chaque édition, le Concert "VOICES OF AFRICA" sera en soutien à l'association "Les Bonnes Œuvres du Cœur", fondée par le Docteur Said Ejjennane.`,
         youtube: null, // Ajouter un lien YouTube si disponible
+      },
+      {
+        a_id: 24,
+        a_title: "Cérémonie de clôture – Palmarès",
+        a_image: null,
+        a_description:
+          "Le jury décerne deux prix : le Grand Prix du Festival et le prix du meilleur apport scientifique. Un jury d'étudiants décerne également un prix.",
       },
     ],
   },
