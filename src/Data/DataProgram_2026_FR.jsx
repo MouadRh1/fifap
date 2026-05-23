@@ -29,6 +29,7 @@ import djillaliHadjouis from "./../Image/Djillali-Hadjouis.png";
 import youssefBokbot from "./../Image/Youssef-Bokbot.png";
 import drissOuarhache from "./../Image/Driss-Ouarhache.png";
 import sofia from "./../Image/sofia-mestari.jpeg";
+import Diner from "./../Image/Diner.webp";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -568,6 +569,21 @@ Le premier extrait de ce nouvel opus est "AFRICA", chanson réalisée en collabo
 
 En avril 2026, Sofia Mestari organise la première édition du Concert "VOICES OF AFRICA", itinérant et qui réunit plusieurs artistes de renom du Continent pour chanter ensemble l'unité Africaine et la solidarité puisque chaque édition, le Concert "VOICES OF AFRICA" sera en soutien à l'association "Les Bonnes Œuvres du Cœur", fondée par le Docteur Said Ejjennane.`,
         youtube: null, // Ajouter un lien YouTube si disponible
+      },
+    ],
+  },
+  {
+    id: uuidv4(),
+    slug: "Dîner-de-Gala",
+    date: "Samedi 13 Juin 2026",
+    time: "22:00",
+    place: "Café Du Cinéma Renaissance",
+    title: "Dîner de Gala",
+    activities: [
+      {
+        a_id: 105,
+        a_title: "22h : Dîner de gala dans un riad",
+        a_image: Diner,
       },
     ],
   },

@@ -17,7 +17,7 @@ import partenaire10 from "../Image/partenaire-cinema-theque.png";
 import partenaire11 from "../Image/partenaire-hiba-noir.png";
 import partenaire12 from "../Image/partenaire-fta.png";
 import markaz from "../Image/markaz.png";
-import icomos from "../Image/icomos.png";
+import audithorium from "../Image/audithorium.jpeg";
 
 const partenaires = [
   {
@@ -111,13 +111,13 @@ const partenaires = [
     logo: markaz,
     link: "https://www.markaz.ma",
   },
-  // {
-  //   id: 14,
-  //   name: "ICOMOS",
-  //   name_ar: "إيكوموس",
-  //   logo: icomos,
-  //   link: "https://www.icomos.ma",
-  // },
+  {
+    id: 14,
+    name: "Audithorium",
+    name_ar: "",
+    logo: audithorium,
+    link: "https://www.audithorium.ma",
+  },
 ];
 
 const PartenaireComponent = () => {

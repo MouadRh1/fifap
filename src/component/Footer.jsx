@@ -91,7 +91,7 @@ export default function Footer() {
               <FaXTwitter size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/share/1E3j8x92kb/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition"

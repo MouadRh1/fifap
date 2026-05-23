@@ -5,9 +5,9 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 
 // Importez vos fichiers ici
-import programFrancais from '../Assets/program-fr.pdf';
+import programme from '../Assets/programme.jpeg';
 import programArabe from '../Assets/program-ar.pdf';
-import invitation from '../Assets/invitation.pdf';
+import invitation from '../Assets/invitation.jpeg';
 
 const DownloadButton = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -48,25 +48,25 @@ const DownloadButton = () => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => handleDownload(programFrancais, "programme-francais.pdf", "Programme en français téléchargé !")}
+            onClick={() => handleDownload(programme, "programme.jpeg", "Programme téléchargé !")}
             className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded-lg text-left"
           >
-            Programme (Français)
+            Programme
           </motion.button>
           
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => handleDownload(programArabe, "programme-arabe.pdf", "Programme en arabe téléchargé !")}
             className="px-4 py-2 cursor-pointer bg-green-500 text-white rounded-lg text-left"
           >
             Programme (Arabe)
-          </motion.button>
+          </motion.button> */}
           
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => handleDownload(invitation, "invitation.pdf", "Invitation téléchargée !")}
+            onClick={() => handleDownload(invitation, "invitation.jpeg", "Invitation téléchargée !")}
             className="px-4 py-2 cursor-pointer bg-orange-500 text-white rounded-lg text-left"
           >
             Invitation

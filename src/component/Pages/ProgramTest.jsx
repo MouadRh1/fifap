@@ -14,82 +14,98 @@ const formatHour = (time) => {
   return time?.replace(":", "h") || "";
 };
 
-// Composant pour afficher une image de manière sécurisée
+// Composant pour afficher une image de manière sécurisée avec gestion des proportions
 const SafeImage = ({ src, alt, className }) => {
   const { t } = useTranslation();
+  const [imgError, setImgError] = useState(false);
 
-  if (!src || src === "") {
+  if (!src || src === "" || imgError) {
     return (
-      <div className={`${className} bg-gray-200 flex items-center justify-center`}>
-        <span className="text-gray-400 text-sm">
-          {t("image_non_disponible")}
-        </span>
+      <div className="bg-gray-200 flex flex-col items-center justify-center min-h-[120px] w-full">
+        <svg className="w-10 h-10 text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span className="text-gray-400 text-xs">{t("image_non_disponible")}</span>
       </div>
     );
   }
-  return <img src={src} alt={alt} className={className} />;
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`${className} object-contain`}
+      onError={() => setImgError(true)}
+    />
+  );
 };
 
 // Composant pour une activité normale (film)
 const NormalActivity = ({ activity }) => {
   return (
-    <div className="bg-gray-100 border border-gray-300 rounded-lg shadow-sm transition-transform duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-orange-500">
-      <SafeImage
-        src={activity.a_image}
-        alt={activity.a_title}
-        className={`object-cover rounded-t-lg w-full ${
-          false ? "h-64" : "h-36"
-        }`}
-      />
-      <h3 className="text-lg font-semibold text-center text-gray-900 p-2">
-        {activity.a_title}
-      </h3>
+    <div className="bg-gray-100 border border-gray-300 rounded-lg shadow-sm transition-transform duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-orange-500 h-full flex flex-col">
+      <div className="w-full bg-gray-100 flex items-center justify-center p-3" style={{ minHeight: "130px" }}>
+        <SafeImage
+          src={activity.a_image}
+          alt={activity.a_title}
+          className="w-full h-auto max-h-[110px]"
+        />
+      </div>
+      <div className="p-2 flex-1">
+        <h3 className="text-sm font-semibold text-center text-gray-800 line-clamp-2">
+          {activity.a_title}
+        </h3>
+      </div>
     </div>
   );
 };
 
-// Composant pour une conférence (design spécial mais dans la même carte)
-const ConferenceActivity = ({ activity, isArabic }) => {
+// Composant pour une conférence
+const ConferenceActivity = ({ activity }) => {
   const { t } = useTranslation();
+  const [imgError, setImgError] = useState(false);
   
   return (
-    <div className="bg-gray-100 border border-gray-300 rounded-lg shadow-sm transition-transform duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-orange-500 h-full">
-      {/* Photo du conférencier (format carré/portrait) */}
-      {activity.a_image && (
-        <div className="w-full h-48 overflow-hidden bg-gradient-to-b from-amber-100 to-orange-100">
+    <div className="bg-gray-100 border border-gray-300 rounded-lg shadow-sm transition-transform duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-orange-500 h-full flex flex-col">
+      {/* Photo du conférencier */}
+      {activity.a_image && !imgError ? (
+        <div className="w-full bg-gradient-to-b from-amber-100 to-orange-100 flex items-center justify-center p-3" style={{ minHeight: "150px" }}>
           <img
             src={activity.a_image}
             alt={activity.a_speaker || activity.a_title}
-            className="w-full h-full object-cover object-top"
+            className="w-24 h-24 rounded-full object-cover shadow-md"
+            onError={() => setImgError(true)}
           />
+        </div>
+      ) : (
+        <div className="w-full bg-gradient-to-b from-amber-100 to-orange-100 flex items-center justify-center p-3" style={{ minHeight: "150px" }}>
+          <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
+            <span className="text-gray-500 text-xs">Photo</span>
+          </div>
         </div>
       )}
       
-      <div className="p-3">
-        {/* Titre */}
-        <h3 className="text-md font-semibold text-center text-gray-800 line-clamp-2">
+      <div className="p-3 flex-1 flex flex-col">
+        <h3 className="text-sm font-semibold text-center text-gray-800 line-clamp-2">
           {activity.a_title}
         </h3>
         
-        {/* Sous-titre */}
         {activity.a_subtitle && (
           <p className="text-xs text-[#ac5f2d] font-medium text-center mt-1 line-clamp-2">
             {activity.a_subtitle}
           </p>
         )}
         
-        {/* Conférencier */}
         {activity.a_speaker && (
-          <p className="text-sm font-semibold text-gray-700 text-center mt-2">
+          <p className="text-xs font-semibold text-gray-700 text-center mt-2">
             Par {activity.a_speaker}
           </p>
         )}
         
-        {/* Rôle (version très courte) */}
         {activity.a_speakerRole && (
           <p className="text-xs text-gray-500 text-center mt-1 line-clamp-2">
-            {activity.a_speakerRole.length > 80 
-              ? activity.a_speakerRole.slice(0, 80) + "..." 
+            {activity.a_speakerRole.length > 70 
+              ? activity.a_speakerRole.slice(0, 70) + "..." 
               : activity.a_speakerRole}
           </p>
         )}
@@ -211,10 +227,10 @@ export default function Program() {
                   <Link
                     to={`/program/${currentYear}/${program.slug}`}
                     key={program.id}
-                    className="bg-white border border-gray-300 rounded-lg shadow-md transition-transform duration-300 overflow-hidden hover:bg-gray-200 hover:border-orange-500 hover:shadow-lg hover:-translate-y-1 block"
+                    className="bg-white border border-gray-300 rounded-lg shadow-md transition-transform duration-300 overflow-hidden hover:bg-gray-200 hover:border-orange-500 hover:shadow-lg hover:-translate-y-1 block h-full flex flex-col"
                   >
                     {/* Heure */}
-                    <div className="bg-[#ac5f2d]/10 py-2 border-b border-gray-200">
+                    <div className="bg-[#ac5f2d]/10 py-2 border-b border-gray-200 flex-shrink-0">
                       <h3 className="text-xl font-semibold text-center text-[#ac5f2d]">
                         <i className="fa-solid fa-clock mr-2"></i>
                         {formatHour(program.time)}
@@ -222,50 +238,54 @@ export default function Program() {
                     </div>
 
                     {/* Titre du programme */}
-                    <h1 className="text-lg font-bold text-center text-[#ac5d2f] py-3 px-2">
-                      {program.title}
-                    </h1>
+                    <div className="flex-shrink-0">
+                      <h1 className="text-lg font-bold text-center text-[#ac5d2f] py-3 px-2">
+                        {program.title}
+                      </h1>
+                    </div>
 
                     {/* Description courte */}
                     {program.description && (
-                      <p className="px-4 pb-2 text-gray-600 text-sm line-clamp-2 text-center">
-                        {program.description}
-                      </p>
-                    )}
-
-                    {/* Activités - avec logique de grille */}
-                    <div
-                      className={`grid gap-4 p-4 ${
-                        program.activities?.length === 1
-                          ? "grid-cols-1 place-items-center"
-                          : "grid-cols-1 sm:grid-cols-2"
-                      }`}
-                    >
-                      {program.activities?.slice(0, 4).map((activity) => {
-                        // Vérifier si c'est une conférence
-                        const isConference = activity.a_speaker || 
-                                           program.slug?.includes('conference');
-                        
-                        return isConference ? (
-                          <ConferenceActivity 
-                            key={activity.a_id} 
-                            activity={activity} 
-                            isArabic={isArabic}
-                          />
-                        ) : (
-                          <NormalActivity key={activity.a_id} activity={activity} />
-                        );
-                      })}
-                    </div>
-                    
-                    {/* Indicateur "Voir plus" si plus de 4 activités */}
-                    {program.activities?.length > 4 && (
-                      <div className="pb-3 text-center">
-                        <span className="text-xs text-[#ac5f2d]">
-                          +{program.activities.length - 4} activités
-                        </span>
+                      <div className="flex-shrink-0">
+                        <p className="px-4 pb-2 text-gray-600 text-sm line-clamp-2 text-center">
+                          {program.description}
+                        </p>
                       </div>
                     )}
+
+                    {/* Activités */}
+                    <div className="flex-1 p-4">
+                      <div
+                        className={`grid gap-4 ${
+                          program.activities?.length === 1
+                            ? "grid-cols-1"
+                            : "grid-cols-1 sm:grid-cols-2"
+                        }`}
+                      >
+                        {program.activities?.slice(0, 4).map((activity) => {
+                          const isConference = activity.a_speaker || 
+                                             program.slug?.includes('conference');
+                          
+                          return isConference ? (
+                            <ConferenceActivity 
+                              key={activity.a_id} 
+                              activity={activity} 
+                            />
+                          ) : (
+                            <NormalActivity key={activity.a_id} activity={activity} />
+                          );
+                        })}
+                      </div>
+                      
+                      {/* Indicateur "Voir plus" */}
+                      {program.activities?.length > 4 && (
+                        <div className="mt-3 text-center">
+                          <span className="text-xs text-[#ac5f2d]">
+                            +{program.activities.length - 4} activités
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   </Link>
                 ))}
             </div>
@@ -274,7 +294,7 @@ export default function Program() {
       })}
 
       <Suspense fallback={null}>
-        {/* <DownloadButton /> */}
+        <DownloadButton />
       </Suspense>
     </main>
   );

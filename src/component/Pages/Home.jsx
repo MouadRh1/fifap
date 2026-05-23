@@ -20,7 +20,7 @@ const Home = () => {
       {/* <WhatsappBtn/> */}
       <ProgramHome2025/>
       <Partenaire />
-      <Suspense fallback={null}>{/* <DownloadButton /> */}</Suspense>
+      <Suspense fallback={null}><DownloadButton /></Suspense>
     </>
   );
 };

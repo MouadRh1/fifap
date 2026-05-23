@@ -261,21 +261,46 @@ const DetailsProgram = () => {
                           </h3>
                         )}
 
-                        <div className="flex flex-col md:flex-row gap-4 mt-3">
-                          {activity.a_image && (
-                            <img
-                              src={activity.a_image}
-                              alt={activity.a_title}
-                              onClick={() => setSelectedImage(activity.a_image)}
-                              className="w-full md:w-60 md:h-90 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                            />
-                          )}
-                          {activity.a_description && (
-                            <p className="text-gray-700 text-justify leading-relaxed flex-1">
-                              {activity.a_description}
-                            </p>
-                          )}
-                        </div>
+                        {/* Pour le concert : image pleine largeur avec description en dessous */}
+                        {activity.a_title ===
+                        "Concert de clôture - Sofia Mestari" ? (
+                          <div className="flex flex-col w-full mt-3">
+                            {activity.a_image && (
+                              <img
+                                src={activity.a_image}
+                                alt={activity.a_title}
+                                onClick={() =>
+                                  setSelectedImage(activity.a_image)
+                                }
+                                className="w-full h-auto object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                              />
+                            )}
+                            {activity.a_description && (
+                              <p className="text-gray-700 text-justify leading-relaxed mt-4">
+                                {activity.a_description}
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          // Pour les autres activités : image à gauche, description à droite
+                          <div className="flex flex-col md:flex-row gap-4 mt-3">
+                            {activity.a_image && (
+                              <img
+                                src={activity.a_image}
+                                alt={activity.a_title}
+                                onClick={() =>
+                                  setSelectedImage(activity.a_image)
+                                }
+                                className="w-full md:w-60 md:h-90 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                              />
+                            )}
+                            {activity.a_description && (
+                              <p className="text-gray-700 text-justify leading-relaxed flex-1">
+                                {activity.a_description}
+                              </p>
+                            )}
+                          </div>
+                        )}
 
                         {activity.youtube && (
                           <div className="mt-4 flex justify-center">

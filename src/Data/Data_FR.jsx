@@ -24,7 +24,7 @@ import amal from "../Image/amal-ayouch.jpg";
 import lemjidi from "../Image/lemjidi.jpeg";
 import chennaoui from "../Image/chennaoui.png";
 import rachidBenzine from "../Image/rachid-benzine.jpg";
-import hakim from "../Image/hakim.jpeg";
+import hakim from "../Image/Hakim_Belabbes.jpg";
 import nadia from "../Image/nadia-achour.png";
 import meriem from "../Image/meriem_ait.jpeg";
 import djillali from "../Image/Djillali-Hadjouis.png";
@@ -34,6 +34,9 @@ import haroune from "../Image/haroune-hidaoui.jpeg";
 import yamane from "../Image/yamane-aya.jpeg";
 import ghita from "../Image/ghita-elouali.jpeg";
 import saraZhiro from "../Image/sara-zhiro.jpeg";
+import salmaKortobi from "../Image/salma-kortobi.jpeg";
+import sedraty from "../Image/ismail-sedraty.jpeg";
+
 
 import { v4 as uuidv4 } from "uuid";
 export const prefaces = [
@@ -426,7 +429,7 @@ export const memberJury = [
     nom: "Hakim Belabbes",
     image: hakim, // À remplacer par l'image correspondante
     description:
-      "Hakim Belabbes est né dans la ville marocaine de Boujad, où son père possédait le seul cinéma. Il a obtenu un baccalauréat ès arts en littérature américaine et africaine en 1983 à l'université Mohamed V de Rabat, au Maroc, et un diplôme d'études supérieures en cinéma et vidéo au Columbia College de Chicago, où il enseigne aujourd'hui la réalisation et la production cinématographiques. Belabbes a dirigé le département audiovisuel de la Fondation Hassan II à Rabat, où il a créé des films qui documentent les expériences des immigrants marocains en Europe. Il a produit et réalisé plus de 10 films et a reçu plusieurs prix.",
+      "Hakim Belabbes est cinéaste et Directeur de l’Institut Supérieur de l’Audio-Visuel et du Cinéma (ISMAC) à Rabat. Titulaire d’un Master of Fine Arts de Columbia College Chicago et d’un DEA en Littérature Américaine de l’Université Lyon II, il a exercé pendant plus de dix ans des fonctions d’enseignement aux États-Unis et dirigé les départements d’éducation et de financement du Doha Film Institute. Fondateur du Sahara Lab en 2015, il pilote un programme de formation et de production ayant permis la réalisation de plus de 30 œuvres documentaires et expérimentales par de jeunes cinéastes du sud marocain. Son action s’inscrit dans le développement des politiques culturelles et le renforcement des capacités professionnelles dans le secteur cinématographique.",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury",
@@ -437,7 +440,7 @@ export const memberJury = [
     nom: "Hasna Chennaoui",
     image: chennaoui, // À remplacer par l'image correspondante
     description:
-      "Scientifique marocaine de renommée mondiale, spécialiste des météorites et de la planétologie. Professeure à l'Université Hassan II de Casablanca, elle est la première femme en Afrique et dans le monde arabe à avoir obtenu un doctorat d'État sur les météorites. Considérée comme la 'mère des météorites' au Maroc, elle préside la fondation Attarik et œuvre activement pour la préservation du patrimoine géologique et la promotion de la recherche spatiale.",
+      "Pr. Hasnaa Chennaoui Aoudjehane est géochimiste et planétologue à l’Université Hassan II de Casablanca.   Première femme diplômée en planétologie au Maroc et dans le monde arabe, elle est docteure de l’Université Pierre et Marie Curie et spécialiste des météorites.   Référence internationale depuis plus de 20 ans, ses travaux portent sur la classification et la géochimie des météorites.   L’astéroïde 'Chennaoui' a été nommé en son honneur par l’astronome Michel Ory.   Lauréate du Service Award de la Meteoritical Society et du Senior Award du Réseau africain des femmes en astronomie, elle est membre des comités de nomenclature et de diffusion de l’IAU.   En 2019, elle fonde l’ATTARIK Foundation pour promouvoir la science planétaire et le patrimoine géologique au Maroc et à l’international.",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury",
@@ -469,31 +472,9 @@ export const memberJury = [
 export const juryEtudiant = [
   {
     id: uuidv4(),
-    slug: "sara-zhiro",
-    nom: "Sara ZHIRO",
-    image: saraZhiro, // À remplacer par l'image correspondante
-    description:
-      "Étudiante à l'Institut national de musique et des arts chorégraphiques (première année)",
-    nationalite: "(Maroc)",
-    route: "members",
-    role: "Membre du Jury Étudiant",
-  },
-  {
-    id: uuidv4(),
-    slug: "yamane-aya",
-    nom: "Yamane Aya",
-    image: yamane, // À remplacer par l'image correspondante
-    description:
-      "Étudiante à l'École nationale d'architecture de Rabat (première année)",
-    nationalite: "(Maroc)",
-    route: "members",
-    role: "Membre du Jury Étudiant",
-  },
-  {
-    id: uuidv4(),
     slug: "haroune-el-hidaoui",
     nom: "Haroune EL HIDAOUI",
-    image: haroune, // À remplacer par l'image correspondante
+    image: haroune,
     description:
       "Étudiant en 6ème année à l'école d'architecture de Rabat (UIR)",
     nationalite: "(Maroc)",
@@ -502,11 +483,21 @@ export const juryEtudiant = [
   },
   {
     id: uuidv4(),
-    slug: "ghita-louali",
-    nom: "Ghita LOUALI",
-    image: ghita, // À remplacer par l'image correspondante
+    slug: "ismael-sedrati",
+    nom: "Ismael Sedrati",
+    image: sedraty,
     description:
-      "Étudiante à l'Institut supérieur d'art dramatique et d'animation culturelle (3ème année)",
+      "Étudiant en 3ème année à l'ENS Louis Lumière, section Cinéma.",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "salma-kortobi",
+    nom: "Salma Kortobi",
+    image: salmaKortobi,
+    description: "Étudiante à l'école supérieure des arts visuels.",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury Étudiant",
@@ -515,9 +506,42 @@ export const juryEtudiant = [
     id: uuidv4(),
     slug: "basma-oumaima",
     nom: "Basma Oumaima",
-    image: basmaOumaima, // À remplacer par l'image correspondante
+    image: basmaOumaima,
     description:
       "Étudiante en 3ème année cycle fondamentale à l'INSAP (option archéologie subaquatique)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "sara-zhiro",
+    nom: "Sara ZHIRO",
+    image: saraZhiro,
+    description:
+      "Étudiante à l'Institut national de musique et des arts chorégraphiques (première année)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "ghita-louali",
+    nom: "Ghita LOUALI",
+    image: ghita,
+    description:
+      "Étudiante à l'Institut supérieur d'art dramatique et d'animation culturelle (3ème année)",
+    nationalite: "(Maroc)",
+    route: "members",
+    role: "Membre du Jury Étudiant",
+  },
+  {
+    id: uuidv4(),
+    slug: "yamane-aya",
+    nom: "Yamane Aya",
+    image: yamane,
+    description:
+      "Étudiante à l'École nationale d'architecture de Rabat (première année)",
     nationalite: "(Maroc)",
     route: "members",
     role: "Membre du Jury Étudiant",
