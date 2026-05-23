@@ -191,7 +191,7 @@ export const prefaces = [
     nom: "Khadija Benlamine & Tahar BENREDJEB",
     image: Khadija,
     image2: Tahar,
-    title: "Éditorial",
+    title: "Raconter l’humanité par l’image",
     description: (
       <>
         Le patrimoine ne se transmet vraiment que lorsqu'il devient récit. Le
