@@ -30,7 +30,7 @@ import youssefBokbot from "./../Image/Youssef-Bokbot.png";
 import drissOuarhache from "./../Image/Driss-Ouarhache.png";
 import sofia from "./../Image/sofia-mestari.jpeg";
 import Diner from "./../Image/Diner.webp";
-import atay from "./../Image/atay.jpg";
+import atay from "./../Image/atay-siniya.jpeg";
 
 import { v4 as uuidv4 } from "uuid";
 

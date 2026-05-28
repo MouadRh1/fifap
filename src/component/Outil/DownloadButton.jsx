@@ -5,7 +5,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 
 // Importez vos fichiers ici
-import programme from '../Assets/programme.jpeg';
+import programme from '../Assets/program-fr.pdf';
 import programArabe from '../Assets/program-ar.pdf';
 import invitation from '../Assets/invitation.jpeg';
 
@@ -48,7 +48,7 @@ const DownloadButton = () => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => handleDownload(programme, "programme.jpeg", "Programme téléchargé !")}
+            onClick={() => handleDownload(programme, "programme.pdf", "Programme téléchargé !")}
             className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded-lg text-left"
           >
             Programme
