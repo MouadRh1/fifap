@@ -30,7 +30,7 @@ import youssefBokbot from "./../Image/Youssef-Bokbot.png";
 import drissOuarhache from "./../Image/Driss-Ouarhache.png";
 import sofia from "./../Image/sofia-mestari.jpeg";
 import Diner from "./../Image/Diner.webp";
-import atay from "./../Image/atay-siniya.jpeg";
+import atay from "./../Image/atay-cocktail.png";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -583,7 +583,7 @@ En avril 2026, Sofia Mestari organise la première édition du Concert "VOICES O
     activities: [
       {
         a_id: 105,
-        a_title: "22h : Dîner de gala dans un riad",
+        a_title: "22h : Dîner de gala",
         a_image: Diner,
       },
     ],

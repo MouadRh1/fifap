@@ -37,7 +37,6 @@ import saraZhiro from "../Image/sara-zhiro.jpeg";
 import salmaKortobi from "../Image/salma-kortobi.jpeg";
 import sedraty from "../Image/ismail-sedraty.jpeg";
 
-
 import { v4 as uuidv4 } from "uuid";
 export const prefaces = [
   {
@@ -113,78 +112,78 @@ export const prefaces = [
     ),
     route: "preface",
   },
-  // {
-  //   id: uuidv4(),
-  //   slug: "khadija-benlamine",
-  //   nom: "Khadija Benlamine",
-  //   image: Khadija,
-  //   title: "Archéologie, Quelques repères historiques",
-  //   role: "Directrice Du Festival",
-  //   description: (
-  //     <>
-  //       Depuis sa création, le Centre d'Etudes et de Recherches du Patrimoine
-  //       Archéologique et Anthropologique du Moyen Atlas (CERPAAM) a pour mission
-  //       la promotion et la valorisation du patrimoine archéologique et culturel
-  //       marocain. En parallèle de ses campagnes de prospections et de fouilles
-  //       archéologiques au Moyen Atlas menées depuis 2019, le CERPAAM développe
-  //       également des actions adressées au grand public dont la mise en place
-  //       d'un nouvel événement culturel et patrimonial : l'organisation de la
-  //       première édition du FIFAP en avril 2025.
-  //       <br />
-  //       <br />
-  //       La mise en scène du patrimoine pourrait se construire autour d'un récit
-  //       pour instaurer une relation avec notre passé. À ce titre, le film
-  //       documentaire constitue l'un des moyens de médiation les plus attractifs.
-  //       Il a bénéficié du concours du Festival du Film d'Archéologie d'Amiens
-  //       créé il y a plus de trente ans, s'inscrivant ainsi dans les politiques
-  //       actuelles de coopérations franco-marocaines en matière culturelle.
-  //       <br />
-  //       <br />
-  //       Après un premier succès retentissant, le Festival International du Film
-  //       Archéologique et Patrimonial de Rabat revient pour une deuxième édition,
-  //       du 9 au 13 juin 2026. Placée sous le thème « Hommes, cultures,
-  //       territoires », cette édition nous plonge pendant une semaine dans un
-  //       voyage épique à travers le temps et l'espace. Elle proposera un
-  //       programme riche et diversifié à travers la projection de 22 films, dont
-  //       16 seront en compétition. Ces films retracent l'évolution culturelle de
-  //       l'humanité depuis la préhistoire jusqu'à la période antique.
-  //       <br />
-  //       <br />
-  //       Le FIFAP organisé à Rabat, capitale du Royaume et ville Lumière, devient
-  //       le premier rendez-vous des professionnels du cinéma documentaire
-  //       d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il
-  //       rejoint le réseau des festivals du film archéologique organisés à
-  //       Amiens, Narbonne et Pech Merle (France), Oiasso (Espagne), Rovereto,
-  //       Florence et Licodia Eubea (Italie), Athènes (Grèce), Nyon (Suisse),
-  //       Split (Croatie) et Arkhaios (USA).
-  //       <br />
-  //       <br />
-  //       Sous la thématique de sa première édition « Afrique du Nord, pour une
-  //       réécriture de l'histoire humaine », une trentaine de films traitant
-  //       principalement de la Préhistoire et des actualités archéologiques ont
-  //       transporté le public de Rabat du 23 au 27 avril 2025, à travers le
-  //       temps, à la recherche de nos ancêtres les plus lointains. Réalisateurs
-  //       et archéologues ont partagé avec les spectateurs leurs passions et leurs
-  //       savoirs et les ont accompagnés dans ce voyage archéologique visuel et
-  //       sonore.
-  //       <br />
-  //       <br />
-  //       Comme pour la première édition, des archéologues, des architectes, des
-  //       paléontologues et des chercheurs éminents et de renommée internationale
-  //       dans les domaines du patrimoine seront aussi au rendez-vous. Ils
-  //       animeront des conférences sur les grandes découvertes archéologiques
-  //       récentes au Maroc, dédiées au grand public. Le festival sera ainsi un
-  //       espace de rencontres et offrira une occasion unique pour le public
-  //       marocain de découvrir et de s'ouvrir sur les nouvelles expériences de
-  //       production cinématographique dans les domaines de l'archéologie et du
-  //       patrimoine.
-  //       <br />
-  //       <br />
-  //       Khadija Benlamine, directrice du FIFAP.
-  //     </>
-  //   ),
-  //   route: "preface",
-  // },
+  {
+    id: uuidv4(),
+    slug: "khadija-benlamine",
+    nom: "Khadija Benlamine",
+    image: Khadija,
+    title: "Archéologie, Quelques repères historiques",
+    role: "Directrice Du Festival",
+    description: (
+      <>
+        Depuis sa création, le Centre d'Etudes et de Recherches du Patrimoine
+        Archéologique et Anthropologique du Moyen Atlas (CERPAAM) a pour mission
+        la promotion et la valorisation du patrimoine archéologique et culturel
+        marocain. En parallèle de ses campagnes de prospections et de fouilles
+        archéologiques au Moyen Atlas menées depuis 2019, le CERPAAM développe
+        également des actions adressées au grand public dont la mise en place
+        d'un nouvel événement culturel et patrimonial : l'organisation de la
+        première édition du FIFAP en avril 2025.
+        <br />
+        <br />
+        La mise en scène du patrimoine pourrait se construire autour d'un récit
+        pour instaurer une relation avec notre passé. À ce titre, le film
+        documentaire constitue l'un des moyens de médiation les plus attractifs.
+        Il a bénéficié du concours du Festival du Film d'Archéologie d'Amiens
+        créé il y a plus de trente ans, s'inscrivant ainsi dans les politiques
+        actuelles de coopérations franco-marocaines en matière culturelle.
+        <br />
+        <br />
+        Après un premier succès retentissant, le Festival International du Film
+        Archéologique et Patrimonial de Rabat revient pour une deuxième édition,
+        du 9 au 13 juin 2026. Placée sous le thème « Hommes, cultures,
+        territoires », cette édition nous plonge pendant une semaine dans un
+        voyage épique à travers le temps et l'espace. Elle proposera un
+        programme riche et diversifié à travers la projection de 22 films, dont
+        16 seront en compétition. Ces films retracent l'évolution culturelle de
+        l'humanité depuis la préhistoire jusqu'à la période antique.
+        <br />
+        <br />
+        Le FIFAP organisé à Rabat, capitale du Royaume et ville Lumière, devient
+        le premier rendez-vous des professionnels du cinéma documentaire
+        d'archéologie et du patrimoine en Afrique et dans le monde Arabe. Il
+        rejoint le réseau des festivals du film archéologique organisés à
+        Amiens, Narbonne et Pech Merle (France), Oiasso (Espagne), Rovereto,
+        Florence et Licodia Eubea (Italie), Athènes (Grèce), Nyon (Suisse),
+        Split (Croatie) et Arkhaios (USA).
+        <br />
+        <br />
+        Sous la thématique de sa première édition « Afrique du Nord, pour une
+        réécriture de l'histoire humaine », une trentaine de films traitant
+        principalement de la Préhistoire et des actualités archéologiques ont
+        transporté le public de Rabat du 23 au 27 avril 2025, à travers le
+        temps, à la recherche de nos ancêtres les plus lointains. Réalisateurs
+        et archéologues ont partagé avec les spectateurs leurs passions et leurs
+        savoirs et les ont accompagnés dans ce voyage archéologique visuel et
+        sonore.
+        <br />
+        <br />
+        Comme pour la première édition, des archéologues, des architectes, des
+        paléontologues et des chercheurs éminents et de renommée internationale
+        dans les domaines du patrimoine seront aussi au rendez-vous. Ils
+        animeront des conférences sur les grandes découvertes archéologiques
+        récentes au Maroc, dédiées au grand public. Le festival sera ainsi un
+        espace de rencontres et offrira une occasion unique pour le public
+        marocain de découvrir et de s'ouvrir sur les nouvelles expériences de
+        production cinématographique dans les domaines de l'archéologie et du
+        patrimoine.
+        <br />
+        <br />
+        Khadija Benlamine, directrice du FIFAP.
+      </>
+    ),
+    route: "preface",
+  },
   {
     id: uuidv4(),
     slug: "khadija-et-tahar",
@@ -195,57 +194,99 @@ export const prefaces = [
     description: (
       <>
         Le patrimoine ne se transmet vraiment que lorsqu'il devient récit. Le
-        film documentaire en est aujourd'hui l'un des vecteurs les plus
-        puissants. Il donne à voir, à comprendre, à ressentir. En collaboration
-        avec le Festival du Film d'Archéologie d'Amiens, fondé il y a plus de
-        trente ans, le FIFAP s'inscrit d'emblée dans une dynamique de
-        coopération franco-marocaine et dans un réseau international qui relie
-        Rabat à Amiens, Narbonne, Pech Merle, Oiasso, Rovereto, Florence,
-        Athènes, Nyon, Split ou encore Arkhaios. Rabat rejoint ainsi les grandes
-        capitales du film d'archéologie.
+        film documentaire en est aujourd'hui l'un des vecteurs principaux.
         <br />
         <br />
-        La deuxième édition, du 9 au 13 juin 2026, confirmera cette vocation.
-        Placée sous le thème « Hommes, cultures, territoires », elle propose un
-        voyage, pendant une semaine, à travers le temps et l'espace. Vingt-deux
-        films seront projetés, dont seize en compétition, retraçant l'aventure
-        humaine depuis la préhistoire jusqu'à la période antique en passant par
-        les premières peintures pariétales et par l'invention de l'écriture.
-        C'est une invitation à regarder d'où nous venons pour mieux comprendre
-        qui nous sommes.
+        Après une première édition qui a servi de lancement au Festival
+        International du Film Archéologique et Patrimonial de Rabat, le Centre
+        d’Études et de Recherches du Patrimoine Archéologique et Anthropologique
+        du Moyen Atlas (CERPAAM), en collaboration avec le Festival du Film
+        d'Archéologie d'Amiens, vous invite du 9 au 13 juin 2026 à un nouveau
+        voyage à travers le temps et les continents, au gré des fouilles
+        archéologiques et des recherches scientifiques qui en sont le
+        prolongement.
         <br />
         <br />
-        La première édition avait donné le ton. Du 23 au 27 avril 2025, une
-        trentaine de films consacrés à la Préhistoire et aux découvertes
-        récentes avaient transporté le public de Rabat. Réalisateurs et
-        archéologues ont partagé leurs passions, leurs méthodes, leurs
-        questions. Ils ont montré que la recherche ne se fait pas à huis clos :
-        elle se partage.
+        Placée sous le thème « Hommes, cultures, territoires », cette seconde
+        édition propose un programme riche et diversifié à travers la
+        projection, à l'auditorium de l’Institut National Supérieur de Musique
+        et des Arts Chorégraphiques (INSMAC) et au Cinéma Renaissance, de 17
+        longs métrages et 5 courts-métrages retraçant l’évolution culturelle de
+        l’humanité depuis La Préhistoire jusqu'aux périodes médiévales.
         <br />
         <br />
-        En 2026, cette exigence se poursuit. Archéologues, architectes,
-        paléontologues et chercheurs de renommée viendront animer des
-        conférences de vulgarisation scientifique autour des grandes découvertes
-        faites au Maroc. Le festival devient ainsi carrefour : entre
-        disciplines, entre chercheurs et citoyens, entre le Maroc et le monde.
+        Pour la séance d'inauguration, nous avons choisi de vous présenter
+        <strong style={{ fontWeight: "bold", fontStyle: "italic" }}>
+          {" "}
+          Amérique : la nouvelle histoire des premiers hommes,
+        </strong>{" "}
+        une enquête archéologique sur l'arrivée des humains sur le continent
+        américain, il y a près de 32 000 ans. Ce choix n'est pas anodin. Il
+        s'agit en effet d'une production de Bellota Films, société française
+        fondée en 2009 par Hind Saïh (avec Dominique Barneaud) qui est née et a
+        grandi au Maroc. Parmi la trentaine de documentaires qu'elle a produits,
+        figurent{" "}
+        <strong style={{ fontWeight: "bold", fontStyle: "italic" }}>
+          Homo sapiens, les nouvelles origines
+        </strong>{" "}
+        que nous avions projetés lors de la séance d'inauguration de la première
+        édition du FIFAP, mais aussi{" "}
+        <strong style={{ fontWeight: "bold", fontStyle: "italic" }}>
+          la cité oubliée de la dynastie Ming
+        </strong>
+        .
         <br />
         <br />
-        Le FIFAP n'est pas seulement un festival. C'est un espace de rencontre,
-        un lieu où la science sort des laboratoires pour dialoguer avec la
-        société. C'est aussi une occasion unique pour le public marocain de
-        découvrir la richesse du cinéma documentaire consacré à l'archéologie et
-        au patrimoine, et de participer à la réécriture de l'histoire humaine,
-        en particulier celle de l'Afrique du Nord.
+        Producteurs, représentante de France TV, réalisateurs et réalisatrices
+        et intervenants scientifiques seront présents à Rabat pour dialoguer
+        avec le public à l'occasion d'une partie des projections. Grâce à leur
+        participation, le festival sera ainsi un espace de rencontres offrant
+        une occasion unique pour le public marocain de découvrir les nouvelles
+        expériences de production cinématographique dans les domaines de
+        l’archéologie et du patrimoine.
         <br />
         <br />
-        Rabat, ville lumière et capitale du Royaume, devient avec le FIFAP le
-        premier rendez-vous du cinéma documentaire d'archéologie en Afrique et
-        dans le monde arabe. Une étape importante dans la reconnaissance et la
-        valorisation de notre patrimoine commun.
+        Des archéologues, architectes, paléontologues et chercheurs éminents,
+        reconnus à l’échelle internationale dans les domaines du patrimoine,
+        seront aussi au rendez-vous. Ils animeront, pour le grand public, trois
+        conférences dont l’une sur les grandes découvertes archéologiques
+        récentes au Maroc.
         <br />
         <br />
-        Pour l'équipe du FIFAP, Khadija Benlamine, directrice du FIFAP, Tahar
-        Benredjeb, directeur du Festival du Film d'Archéologie d'Amiens.
+        Cette édition sera également l'occasion de rendre un hommage à{" "}
+        <strong>Joudia Hassar-Benslimane</strong>, une des figures emblématiques
+        de l'archéologie marocaine, et à <strong>Abderrahmane Chorfi</strong>,
+        figure majeure de l'architecture et du patrimoine marocain.
+        <br />
+        <br />
+        Avec l'installation du FIFAP dans la durée, nous espérons que
+        l'engouement du public se traduise, à court ou moyen terme, par
+        l'émergence nécessaire de productions spécifiquement marocaines.
+        <br />
+        <br />
+        <strong style={{ fontWeight: "bold" }}>
+          Nous vous souhaitons un excellent Festival !
+        </strong>
+        <br />
+        <br />
+        <div style={{ marginTop: "20px" }}>
+          <p style={{ fontStyle: "italic", marginBottom: "10px" }}>
+            Pour l’équipe du FIFAP,
+          </p>
+          <p style={{ fontWeight: "bold", marginBottom: "5px" }}>
+            Khadija BENLAMINE
+          </p>
+          <p style={{ marginBottom: "15px" }}>
+            Directrice du Festival International du Film Archéologique et
+            Patrimonial de Rabat
+          </p>
+          <p style={{ fontWeight: "bold", marginBottom: "5px" }}>
+            Tahar BENREDJEB
+          </p>
+          <p style={{ marginBottom: 0 }}>
+            Directeur du Festival du Film d’Archéologie d’Amiens
+          </p>
+        </div>
       </>
     ),
     route: "preface",

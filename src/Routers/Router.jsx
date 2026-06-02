@@ -17,6 +17,8 @@ import PrefaceItem from "../component/PrefaceItem";
 import NotFound from "../component/Pages/NotFound";
 import Conferences from "../component/Pages/Conferences";
 import FestivalHommage from "../component/FestivalHommage";
+import ContactForm from "../component/Pages/ContactForm";
+import ChatButton from "../component/Outil/ChatBtn";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -27,6 +29,7 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contactez-nous" element={ <ContactForm/> } />
           <Route path="/contact" element={<Contact />} />
           <Route path="/program/:year" element={<Program />} />
           <Route path="/moreMembers" element={<MoreMembers />} />
@@ -43,6 +46,7 @@ export default function Router() {
         </Routes>
       </Suspense>
       <Footer />
+      {/* <ChatButton/> */}
     </BrowserRouter>
   );
 }

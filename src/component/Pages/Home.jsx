@@ -18,7 +18,7 @@ const Home = () => {
       {/* <Blogcontent/> */}
       <Membresoffestival />
       {/* <WhatsappBtn/> */}
-      <ProgramHome2025/>
+      {/* <ProgramHome2025/> */}
       <Partenaire />
       <Suspense fallback={null}><DownloadButton /></Suspense>
     </>

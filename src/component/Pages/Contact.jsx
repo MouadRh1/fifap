@@ -1,227 +1,202 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaPlus } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import { GoAlertFill } from "react-icons/go";
 import { FaLocationDot } from "react-icons/fa6";
 import {
   IoLogoInstagram,
   IoLogoWhatsapp,
   IoLogoFacebook,
+  IoLogoLinkedin,
 } from "react-icons/io5";
-import { IoLogoLinkedin } from "react-icons/io";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { comiteDorganisation as comiteFR } from "../../Data/Data_FR";
 import { memberJury as juryFR } from "../../Data/Data_FR";
 import { comiteDorganisation as comiteAR } from "../../Data/Data_AR";
 import { memberJury as juryAR } from "../../Data/Data_AR";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
-  const [openSection, setOpenSection] = useState(null);
   const isArabic = i18n.language === "ar";
 
   // Sélectionner les données selon la langue
   const comiteDorganisation = isArabic ? comiteAR : comiteFR;
   const memberJury = isArabic ? juryAR : juryFR;
 
-  const toggleSection = (section) => {
-    setOpenSection(openSection === section ? null : section);
-  };
+  const contactInfo = [
+    {
+      icon: <MdOutlineEmail className="w-6 h-6" />,
+      title: t("email"),
+      value: "cerpaamfes2019@gmail.com",
+      link: "mailto:cerpaamfes2019@gmail.com",
+    },
+    {
+      icon: <FaPhoneAlt className="w-6 h-6" />,
+      title: t("telephone"),
+      value: "+212 661-101883",
+      link: "tel:+212661101883",
+    },
+    {
+      icon: <FaLocationDot className="w-6 h-6" />,
+      title: t("adresse"),
+      value: t("adresse_rabat"),
+      link: null,
+    },
+  ];
+
+  const socialLinks = [
+    { icon: <IoLogoInstagram size={24} />, href: "https://www.instagram.com/fifapmaroc?igsh=N3MwbzN0d2F2cWo2", label: "Instagram" },
+    { icon: <IoLogoFacebook size={24} />, href: "https://www.facebook.com/share/14eGYJbtg9P/?mibextid=wwXIfr", label: "Facebook" },
+    // { icon: <IoLogoWhatsapp size={24} />, href: "https://whatsapp.com", label: "WhatsApp" },
+    // { icon: <IoLogoLinkedin size={24} />, href: "https://linkedin.com", label: "LinkedIn" },
+  ];
 
   return (
-    <div className="py-20 bg-orange-100/20">
-      <div className="max-w-7xl mx-auto p-6 min-h-screen">
-        <h1 className="text-[#ac5f2d] mb-8 font-extrabold max-w-[100px] md:max-w-[400px] lg:max-w-2xl text-4xl md:text-6xl">
-          {t("association_cerpaam")}
-        </h1>
-        
-        {/* Coordonnées */}
-        <h2 className="text-2xl max-w-lg font-bold text-[#ac5f2d]">
-          {t("coordonnees")}
-        </h2>
-        <div className="mx-4 md:mx-10">
-          <p className="font-semibold mt-2">
-            {t("festival_name")}
-          </p>
-          <p className="flex items-center gap-2">
-            <FaLocationDot className="text-[#ac5d2f]" />
-            {t("adresse_rabat")}
-          </p>
-          <p className="mt-2">
-            <span className="flex items-center gap-2">
-              <GoAlertFill className="text-lg text-[#ac5f2d]" />
-              {t("info_ouverture")}
-            </span>
-          </p>
-          <p>
-            <span className="mt-2 flex items-center gap-2">
-              <FaPhoneAlt className="text-[#ac5f2d]" />
-              {t("standard_telephonique")} :
-              <strong>
-                <a
-                  href="tel:+212 661-101883"
-                  className="text-blue-500 hover:underline"
-                >
-                  0661-101883
-                </a>
-              </strong>
-            </span>
-          </p>
-        </div>
-
-        {/* Publics */}
-        <h2 className="text-2xl font-bold text-orange-600 mt-6">{t("publics")}</h2>
-        
-        {/* Section Contact */}
-        <div
-          className="flex justify-between items-center border p-4 mt-4 bg-orange-300/30 rounded-lg cursor-pointer"
-          onClick={() => toggleSection("abonnement")}
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* En-tête */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <span>{t("contact")}</span>
-          <span className="text-xl">
-            {openSection === "abonnement" ? <FaMinus /> : <FaPlus />}
-          </span>
-        </div>
-        {openSection === "abonnement" && (
-          <div>
-            <p className="p-4 flex items-center space-x-2 bg-gray-100 text-gray-700">
-              <MdOutlineEmail className="text-xl text-[#ac5f2d]" />
-              <a
-                href="mailto:cerpaamfes2019@gmail.com"
-                className="text-blue-500 hover:underline"
-              >
-                cerpaamfes2019@gmail.com
-              </a>
-            </p>
-            <p className="p-4 flex items-center space-x-2 bg-gray-100 text-gray-700">
-              <FaPhoneAlt className="text-xl text-[#ac5f2d]" />
-              <a
-                href="tel:+212 661-101883"
-                className="text-blue-500 hover:underline"
-              >
-                0661-101883
-              </a>
-            </p>
-          </div>
-        )}
+          <h1 className="text-4xl md:text-5xl font-bold text-[#ac5f2d] mb-4">
+            {t("contactez_nous")}
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] mx-auto rounded-full"></div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            {t("contact_description")}
+          </p>
+        </motion.div>
 
-        {/* Section equipe du festival */}
-        <h2 className="text-2xl font-bold text-orange-600 mt-6">{t("equipe")}</h2>
-        <div
-          className="flex justify-between items-center border p-4 mt-2 rounded-lg bg-orange-300/30 cursor-pointer"
-          onClick={() => toggleSection("directrice")}
-        >
-          <span>{t("directrice_festival")}</span>
-          <span className="text-xl">
-            {openSection === "directrice" ? <FaMinus /> : <FaPlus />}
-          </span>
-        </div>
-        {openSection === "directrice" && (
-          <AnimatePresence>
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="p-4 flex justify-between items-center space-x-2 bg-gray-100 text-gray-700"
-            >
-              <strong className="text-2xl">Khadija Benlamine</strong>
-              <p className="flex items-center gap-5">
-                <a
-                  href="http://www.instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IoLogoInstagram
-                    className="text-pink-600 hover:text-pink-800"
-                    size={25}
-                  />
-                </a>
-                <a
-                  href="http://www.facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IoLogoFacebook
-                    className="text-blue-600 hover:text-blue-800"
-                    size={25}
-                  />
-                </a>
-                <a
-                  href="http://www.whatsapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IoLogoWhatsapp
-                    className="text-green-600 hover:text-green-800"
-                    size={25}
-                  />
-                </a>
-                <a
-                  href="http://www.linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IoLogoLinkedin
-                    className="text-blue-500 hover:text-blue-700"
-                    size={25}
-                  />
-                </a>
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        )}
+        {/* Formulaire et Coordonnées - 2 colonnes */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Formulaire */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <ContactForm />
+          </motion.div>
 
-        {/* Section comité d'organisation */}
-        <div
-          className="flex justify-between items-center border rounded-lg p-4 mt-2 bg-orange-300/30 cursor-pointer"
-          onClick={() => toggleSection("comite")}
-        >
-          <span>{t("comite_organisation")}</span>
-          <span className="text-xl">
-            {openSection === "comite" ? <FaMinus /> : <FaPlus />}
-          </span>
-        </div>
-        <AnimatePresence>
-          {openSection === "comite" && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="p-6 bg-gray-100 rounded-lg"
-            >
-              <h2 className="text-2xl font-semibold text-[#ac5f2d] mb-4">
-                {t("comite_organisation")}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {comiteDorganisation.map((member) => (
-                  <motion.div
-                    key={member.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    className="p-4 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all"
-                  >
-                    <p className="text-lg uppercase font-semibold text-gray-900">
-                      {member.nom}
-                    </p>
-                    <p className="text-gray-600 text-justify leading-relaxed mx-auto">
-                      {member.description}
-                    </p>
-                    <p className="text-gray-500 text-sm italic">
-                      {member.nationalite}
-                    </p>
-                  </motion.div>
-                ))}
+          {/* Coordonnées */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] px-6 py-4">
+                <h2 className="text-xl font-bold text-white">{t("coordonnees")}</h2>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              
+              <div className="p-6 space-y-6">
+                {/* Informations de contact */}
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-[#ac5f2d] flex-shrink-0">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-700">{info.title}</h3>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          className="text-gray-600 hover:text-[#ac5f2d] transition-colors break-all"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-600">{info.value}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {/* Séparateur */}
+                <div className="border-t border-gray-200 my-4"></div>
+
+                {/* Réseaux sociaux */}
+                <div>
+                  <h3 className="font-semibold text-gray-700 mb-3">{t("suivez_nous")}</h3>
+                  <div className="flex gap-4">
+                    {socialLinks.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#ac5f2d] hover:text-white transition-all duration-300"
+                        aria-label={social.label}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Info ouverture */}
+                {/* <div className="bg-amber-50 rounded-lg p-4 mt-4">
+                  <p className="text-sm text-gray-600 flex items-start gap-2">
+                    <span className="text-[#ac5f2d] text-lg">📢</span>
+                    {t("info_ouverture")}
+                  </p>
+                </div> */}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Section Équipe */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12"
+        >
+          <h2 className="text-2xl font-bold text-[#ac5f2d] text-center mb-8">
+            {t("notre_equipe")}
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Comité d'organisation */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-gray-800 px-6 py-3">
+                <h3 className="text-lg font-bold text-white">{t("comite_organisation")}</h3>
+              </div>
+              <div className="p-4 max-h-96 overflow-y-auto">
+                <div className="space-y-3">
+                  {comiteDorganisation.slice(0, 6).map((member) => (
+                    <div key={member.id} className="border-b border-gray-100 pb-3 last:border-0">
+                      <p className="font-semibold text-gray-800">{member.nom}</p>
+                      <p className="text-sm text-gray-500">{member.role}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Membres du Jury */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-gray-800 px-6 py-3">
+                <h3 className="text-lg font-bold text-white">{t("membres_jury")}</h3>
+              </div>
+              <div className="p-4 max-h-96 overflow-y-auto">
+                <div className="space-y-3">
+                  {memberJury.slice(0, 6).map((member) => (
+                    <div key={member.id} className="border-b border-gray-100 pb-3 last:border-0">
+                      <p className="font-semibold text-gray-800">{member.nom}</p>
+                      <p className="text-sm text-gray-500">{member.role}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
