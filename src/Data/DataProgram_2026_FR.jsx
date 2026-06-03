@@ -41,7 +41,7 @@ const ProgramData2026_FR = [
     slug: "inauguration-du-festival",
     date: "Mardi 9 Juin 2026",
     time: "19:00",
-    place: "Auditorium",
+    place: "Auditorium INSMAC",
     title: "Inauguration du Festival",
     description:
       "Discours et hommages à Joudia Hassar-Benslimane et Abderrahmane Chorfi",
@@ -346,7 +346,7 @@ const ProgramData2026_FR = [
     slug: "neolithique-du-bassin-mediterraneen",
     date: "Vendredi 12 Juin 2026",
     time: "15:30",
-    place: "Auditorium",
+    place: "Auditorium INSMAC",
     title: "Néolithique du Bassin méditerranéen",
     description: "",
     activities: [
