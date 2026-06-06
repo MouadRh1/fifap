@@ -1,23 +1,37 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn, LayoutDashboard } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./../Css/NavBar.module.css";
 import { Menus } from "./../../Data/Utils";
-import { Link, NavLink, useLocation } from "react-router-dom";
 import SearchBar from "../SearchBar";
-import ButtonLangue from "../Outil/ButtonLangue";
+// import ButtonLangue from "../Outil/ButtonLangue"; // ← temporairement désactivé
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState(null); // desktop
-  const [mobileDropdown, setMobileDropdown] = useState(null); // mobile (séparé)
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
   const navBar = useRef(null);
   const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isArabic = i18n.language === "ar";
+
+  // Vérifier si l'utilisateur est connecté
+  useEffect(() => {
+    const token = localStorage.getItem("admin_token");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("admin_token");
+    localStorage.removeItem("admin_name");
+    setIsLoggedIn(false);
+    window.location.href = "/admin";
+  };
 
   const translatedMenus = Menus.map((menu) => ({
     ...menu,
@@ -30,15 +44,13 @@ export default function Navbar() {
 
   const toggleDrawer = () => {
     setIsOpen((prev) => !prev);
-    setMobileDropdown(null); // reset les dropdowns mobiles à l'ouverture/fermeture
+    setMobileDropdown(null);
   };
 
-  // Toggle desktop dropdown
   const toggleDropdown = (name) => {
     setOpenDropdown((prev) => (prev === name ? null : name));
   };
 
-  // Toggle mobile dropdown (indépendant du desktop)
   const toggleMobileDropdown = (name) => {
     setMobileDropdown((prev) => (prev === name ? null : name));
   };
@@ -61,13 +73,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Forcer LTR sur le header
   useEffect(() => {
     const header = document.querySelector("header");
     if (header) header.style.direction = "ltr";
   }, []);
 
-  // Fermer le dropdown desktop au clic en dehors
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (openDropdown && !event.target.closest(".dropdown-container")) {
@@ -127,11 +137,7 @@ export default function Navbar() {
                   onMouseLeave={() => setHoverIndex(null)}
                 >
                   <div
-                    className={`${styles.menuLink} ${
-                      location.pathname.startsWith("/program")
-                        ? styles.active
-                        : ""
-                    }`}
+                    className={`${styles.menuLink} ${location.pathname.startsWith("/program") ? styles.active : ""}`}
                     onClick={() => toggleDropdown("program")}
                     style={{
                       cursor: "pointer",
@@ -143,9 +149,7 @@ export default function Navbar() {
                     {menu.name}
                     <ChevronDown
                       size={16}
-                      className={`${styles.chevronIcon} ${
-                        openDropdown === "program" ? styles.chevronRotate : ""
-                      }`}
+                      className={`${styles.chevronIcon} ${openDropdown === "program" ? styles.chevronRotate : ""}`}
                     />
                   </div>
                   {openDropdown === "program" && (
@@ -179,11 +183,7 @@ export default function Navbar() {
                   onMouseLeave={() => setHoverIndex(null)}
                 >
                   <div
-                    className={`${styles.menuLink} ${
-                      location.pathname.startsWith("/autour")
-                        ? styles.active
-                        : ""
-                    }`}
+                    className={`${styles.menuLink} ${location.pathname.startsWith("/autour") ? styles.active : ""}`}
                     onClick={() => toggleDropdown("autour")}
                     style={{
                       cursor: "pointer",
@@ -195,9 +195,7 @@ export default function Navbar() {
                     {menu.name}
                     <ChevronDown
                       size={16}
-                      className={`${styles.chevronIcon} ${
-                        openDropdown === "autour" ? styles.chevronRotate : ""
-                      }`}
+                      className={`${styles.chevronIcon} ${openDropdown === "autour" ? styles.chevronRotate : ""}`}
                     />
                   </div>
                   {openDropdown === "autour" && (
@@ -238,12 +236,48 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Actions (langue + search + burger) */}
+        {/* Actions (langue + search + login + burger) */}
         <div className={styles.mobileActions} style={{ direction: "ltr" }}>
+          {/* Boutons Admin / Dashboard Desktop */}
+          <div className="hidden md:flex items-center gap-2">
+            {isLoggedIn ? (
+              <>
+                {/* Lien vers le Dashboard — visible uniquement si connecté */}
+                <Link
+                  to="/dashboard"
+                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] hover:shadow-lg text-white rounded-lg transition-all duration-300"
+                >
+                  <LayoutDashboard size={18} />
+                  <span className="text-sm font-medium">Dashboard</span>
+                </Link>
+
+                {/* Bouton Déconnexion */}
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all duration-300"
+                >
+                  <LogIn size={18} className="rotate-180" />
+                  <span className="text-sm font-medium">Déconnexion</span>
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/admin"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] hover:shadow-lg text-white rounded-lg transition-all duration-300"
+              >
+                <LogIn size={18} />
+                <span className="text-sm font-medium">Admin</span>
+              </Link>
+            )}
+          </div>
+
+          {/* ButtonLangue temporairement désactivé */}
           {/* <ButtonLangue /> */}
+
           <div className="ml-4 relative">
             <SearchBar />
           </div>
+
           <motion.button
             onClick={toggleDrawer}
             className={styles.menuButton}
@@ -277,9 +311,7 @@ export default function Navbar() {
                       <span>{menu.name}</span>
                       <ChevronDown
                         size={18}
-                        className={`${styles.mobileChevron} ${
-                          isExpanded ? styles.mobileChevronRotate : ""
-                        }`}
+                        className={`${styles.mobileChevron} ${isExpanded ? styles.mobileChevronRotate : ""}`}
                       />
                     </div>
                     {isExpanded && (
@@ -321,9 +353,7 @@ export default function Navbar() {
                       <span>{menu.name}</span>
                       <ChevronDown
                         size={18}
-                        className={`${styles.mobileChevron} ${
-                          isExpanded ? styles.mobileChevronRotate : ""
-                        }`}
+                        className={`${styles.mobileChevron} ${isExpanded ? styles.mobileChevronRotate : ""}`}
                       />
                     </div>
                     {isExpanded && (
@@ -367,11 +397,54 @@ export default function Navbar() {
               );
             })}
 
-            <li className={styles.mobileDivider}>
+            {/* Boutons Admin / Dashboard dans le menu mobile */}
+            {isLoggedIn ? (
+              <>
+                {/* Lien Dashboard mobile */}
+                <li className={styles.mobileDropdownItem}>
+                  <Link
+                    className={styles.mobileMenuLink}
+                    to="/admin/dashboard"
+                    onClick={() => setIsOpen(false)}
+                    style={{ backgroundColor: "#ac5f2d", color: "white" }}
+                  >
+                    <span>Dashboard</span>
+                    <LayoutDashboard size={18} />
+                  </Link>
+                </li>
+
+                {/* Déconnexion mobile */}
+                <li className={styles.mobileDropdownItem}>
+                  <div
+                    className={styles.mobileMenuLink}
+                    onClick={handleLogout}
+                    style={{ backgroundColor: "#fee2e2", color: "#dc2626" }}
+                  >
+                    <span>Déconnexion Admin</span>
+                    <LogIn size={18} className="rotate-180" />
+                  </div>
+                </li>
+              </>
+            ) : (
+              <li className={styles.mobileDropdownItem}>
+                <Link
+                  className={styles.mobileMenuLink}
+                  to="/admin"
+                  onClick={() => setIsOpen(false)}
+                  style={{ backgroundColor: "#ac5f2d", color: "white" }}
+                >
+                  <span>Administration</span>
+                  <LogIn size={18} />
+                </Link>
+              </li>
+            )}
+
+            {/* ButtonLangue temporairement désactivé */}
+            {/* <li className={styles.mobileDivider}>
               <div className="flex justify-center">
-                {/* <ButtonLangue /> */}
+                <ButtonLangue />
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

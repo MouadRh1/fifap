@@ -230,7 +230,36 @@ ul {
 ul li {
   list-style-type: none;
 }
+/* Bouton Admin */
+.adminBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
 
+.adminBtnLogin {
+  background: linear-gradient(135deg, #ac5f2d, #e67e22);
+  color: white;
+}
+
+.adminBtnLogin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(172, 95, 45, 0.3);
+}
+
+.adminBtnLogout {
+  background-color: #ef4444;
+  color: white;
+}
+
+.adminBtnLogout:hover {
+  background-color: #dc2626;
+}
 /* ========== RESPONSIVE ========== */
 @media screen and (max-width: 1200px) {
   .navContainer {

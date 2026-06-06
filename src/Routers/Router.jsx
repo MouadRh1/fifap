@@ -19,6 +19,9 @@ import Conferences from "../component/Pages/Conferences";
 import FestivalHommage from "../component/FestivalHommage";
 import ContactForm from "../component/Pages/ContactForm";
 import ChatButton from "../component/Outil/ChatBtn";
+import AdminDashboard from "../component/Admin/AdminDashboard";
+import AdminLogin from "../component/Admin/AdminLogin";
+import PrivateRoute from "../component/Admin/PrivateRoute";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -41,12 +44,19 @@ export default function Router() {
           <Route path="/members/:slug" element={<MembersItem />} />
           <Route path="/preface/:slug" element={<PrefaceItem />} />
           <Route path="/program/:year/:slug" element={<ProgramItem />} />
+          {/* admin */}
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={
+            <PrivateRoute>
+              <AdminDashboard />
+            </PrivateRoute>
+          } />
           {/* notFound */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
       <Footer />
-      {/* <ChatButton/> */}
+      <ChatButton/>
     </BrowserRouter>
   );
 }

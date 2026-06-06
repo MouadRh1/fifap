@@ -7,16 +7,23 @@ const ContactForm = () => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
+  // Configuration API
+  const API_URL = import.meta.env.VITE_API_URL || "https://darkgrey-kudu-778101.hostingersite.com/api";
+  // Pour le développement local
+  // const API_URL = "http://localhost:8000";
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
     email: "",
     telephone: "",
+    message: "",
     conditions: false,
   });
 
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -24,11 +31,16 @@ const ContactForm = () => {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+    // Effacer l'erreur du champ modifié
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validation des conditions
     if (!formData.conditions) {
       setStatus("conditions_error");
       setTimeout(() => setStatus(null), 3000);
@@ -37,34 +49,54 @@ const ContactForm = () => {
 
     setLoading(true);
     setStatus(null);
+    setErrors({});
 
-    // Simulation d'envoi - À remplacer par votre API
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({
-        nom: "",
-        prenom: "",
-        email: "",
-        telephone: "",
-        conditions: false,
+    try {
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          nom: formData.nom,
+          prenom: formData.prenom,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message || "Message envoyé depuis le formulaire de contact",
+        }),
       });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setFormData({
+          nom: "",
+          prenom: "",
+          email: "",
+          telephone: "",
+          message: "",
+          conditions: false,
+        });
+      } else if (response.status === 422 && data.errors) {
+        // Erreurs de validation
+        setErrors(data.errors);
+        setStatus("validation_error");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Erreur de connexion:", error);
+      setStatus("error");
+    } finally {
       setLoading(false);
       setTimeout(() => setStatus(null), 5000);
-    }, 1500);
+    }
   };
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      {/* Titre */}
-      {/* <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ac5f2d] mb-3">
-          {t("contactez_nous")}
-        </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] mx-auto rounded-full"></div>
-        <p className="text-gray-600 mt-4">{t("contact_description")}</p>
-      </div> */}
-
-      {/* Formulaire */}
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Nom et Prénom - 2 colonnes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -81,10 +113,15 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 placeholder={t("votre_nom")}
-                className={`w-full pl-10 pr-4 py-3 bg-white border-b-2 border-gray-300 focus:border-[#ac5f2d] focus:outline-none transition-all duration-300 ${isArabic ? "text-right" : "text-left"}`}
+                className={`w-full pl-10 pr-4 py-3 bg-white border-b-2 focus:outline-none transition-all duration-300 ${
+                  errors.nom ? "border-red-500 focus:border-red-500" : "border-gray-300 focus:border-[#ac5f2d]"
+                } ${isArabic ? "text-right" : "text-left"}`}
                 dir={isArabic ? "rtl" : "ltr"}
               />
             </div>
+            {errors.nom && (
+              <p className="text-red-500 text-xs mt-1">{errors.nom[0]}</p>
+            )}
           </div>
 
           <div>
@@ -100,9 +137,14 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 placeholder={t("votre_prenom")}
-                className="w-full pl-10 pr-4 py-3 bg-white border-b-2 border-gray-300 focus:border-[#ac5f2d] focus:outline-none transition-all duration-300"
+                className={`w-full pl-10 pr-4 py-3 bg-white border-b-2 focus:outline-none transition-all duration-300 ${
+                  errors.prenom ? "border-red-500 focus:border-red-500" : "border-gray-300 focus:border-[#ac5f2d]"
+                }`}
               />
             </div>
+            {errors.prenom && (
+              <p className="text-red-500 text-xs mt-1">{errors.prenom[0]}</p>
+            )}
           </div>
         </div>
 
@@ -120,9 +162,14 @@ const ContactForm = () => {
               onChange={handleChange}
               required
               placeholder="exemple@email.com"
-              className="w-full pl-10 pr-4 py-3 bg-white border-b-2 border-gray-300 focus:border-[#ac5f2d] focus:outline-none transition-all duration-300"
+              className={`w-full pl-10 pr-4 py-3 bg-white border-b-2 focus:outline-none transition-all duration-300 ${
+                errors.email ? "border-red-500 focus:border-red-500" : "border-gray-300 focus:border-[#ac5f2d]"
+              }`}
             />
           </div>
+          {errors.email && (
+            <p className="text-red-500 text-xs mt-1">{errors.email[0]}</p>
+          )}
         </div>
 
         {/* Téléphone */}
@@ -141,6 +188,27 @@ const ContactForm = () => {
               className="w-full pl-10 pr-4 py-3 bg-white border-b-2 border-gray-300 focus:border-[#ac5f2d] focus:outline-none transition-all duration-300"
             />
           </div>
+        </div>
+
+        {/* Message */}
+        <div>
+          <label className="block text-gray-700 font-semibold mb-2">
+            {t("message")} <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows="4"
+            placeholder={t("votre_message")}
+            className={`w-full px-4 py-3 bg-white border-b-2 focus:outline-none transition-all duration-300 resize-none ${
+              errors.message ? "border-red-500 focus:border-red-500" : "border-gray-300 focus:border-[#ac5f2d]"
+            }`}
+          />
+          {errors.message && (
+            <p className="text-red-500 text-xs mt-1">{errors.message[0]}</p>
+          )}
         </div>
 
         {/* Checkbox Conditions */}
@@ -231,6 +299,14 @@ const ContactForm = () => {
           <div className="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg">
             <p className="text-yellow-700 font-medium">
               ⚠️ {t("conditions_required")}
+            </p>
+          </div>
+        )}
+
+        {status === "validation_error" && (
+          <div className="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-lg">
+            <p className="text-orange-700 font-medium">
+              ⚠️ {t("validation_error")}
             </p>
           </div>
         )}
