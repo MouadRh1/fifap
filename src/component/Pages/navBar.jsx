@@ -244,7 +244,7 @@ export default function Navbar() {
               <>
                 {/* Lien vers le Dashboard — visible uniquement si connecté */}
                 <Link
-                  to="/dashboard"
+                  to="/admin/dashboard"
                   className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] hover:shadow-lg text-white rounded-lg transition-all duration-300"
                 >
                   <LayoutDashboard size={18} />
