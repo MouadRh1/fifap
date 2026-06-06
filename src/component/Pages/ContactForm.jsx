@@ -8,7 +8,7 @@ const ContactForm = () => {
   const isArabic = i18n.language === "ar";
 
   // Configuration API
-  const API_URL = import.meta.env.VITE_API_URL || "https://darkgrey-kudu-778101.hostingersite.com/api";
+  const API_URL = import.meta.env.VITE_API_URL || "https://darkgrey-kudu-778101.hostingersite.com";
   // Pour le développement local
   // const API_URL = "http://localhost:8000";
 
