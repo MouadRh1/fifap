@@ -400,7 +400,7 @@ const ProgramData2026_FR = [
     slug: "regards-sur-les-civilisations-precolombiennes",
     date: "Vendredi 12 Juin 2026",
     time: "20:00",
-    place: "Cinéma Renaissance",
+    place: "Auditorium INSMAC",
     title: "Regards sur les civilisations précolombiennes",
     description: "",
     activities: [

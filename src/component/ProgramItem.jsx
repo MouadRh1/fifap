@@ -243,9 +243,9 @@ const DetailsProgram = () => {
               {/* Activités */}
               {program.activities && program.activities.length > 0 && (
                 <>
-                  <h2 className="text-2xl font-semibold text-gray-700 mt-6 mb-4">
+                  {/* <h2 className="text-2xl font-semibold text-gray-700 mt-6 mb-4">
                     {t("activites") || "Activités"}
-                  </h2>
+                  </h2> */}
                   <ul className="space-y-6">
                     {program.activities.map((activity) => (
                       <li
