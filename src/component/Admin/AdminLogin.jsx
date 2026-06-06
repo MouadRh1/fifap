@@ -30,9 +30,9 @@ const AdminLogin = () => {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center py-20 px-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] rounded-full flex items-center justify-center mx-auto mb-4">
+          {/* <div className="w-20 h-20 bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl text-white font-bold">F</span>
-          </div>
+          </div> */}
           <h2 className="text-3xl font-bold text-[#ac5f2d]">Administration</h2>
           <p className="text-gray-500 mt-2">Connectez-vous pour accéder au panel</p>
         </div>
@@ -53,7 +53,7 @@ const AdminLogin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ac5f2d]"
-                placeholder="admin@fifap.org"
+                placeholder="email@exemple.com"
                 required
               />
             </div>
