@@ -7,10 +7,10 @@ const ContactForm = () => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
-  // Configuration API
-  const API_URL = import.meta.env.VITE_API_URL || "https://darkgrey-kudu-778101.hostingersite.com";
+  // Configuration API - URL CORRECTE (sans /api en trop)
+  const API_URL = import.meta.env.VITE_API_URL || "https://darkgrey-kudu-778101.hostingersite.com/api";
   // Pour le développement local
-  // const API_URL = "http://localhost:8000";
+  // const API_URL = "http://localhost:8000/api";
 
   const [formData, setFormData] = useState({
     nom: "",
@@ -52,7 +52,8 @@ const ContactForm = () => {
     setErrors({});
 
     try {
-      const response = await fetch(`${API_URL}/api/contact`, {
+      // URL CORRECTE : ${API_URL}/contact (pas /api/contact)
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

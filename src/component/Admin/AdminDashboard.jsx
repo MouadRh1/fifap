@@ -9,7 +9,8 @@ const AdminDashboard = () => {
   const [selectedContact, setSelectedContact] = useState(null);
   const { token, logout, user } = useAuth();
 
-  const API_URL = 'https://darkgrey-kudu-778101.hostingersite.com/api';
+  // URL de l'API - CORRECTE (sans /api en double)
+  const API_URL = import.meta.env.VITE_API_URL || 'https://darkgrey-kudu-778101.hostingersite.com/api';
 
   // Calculer les stats à partir des contacts
   const stats = {
@@ -20,8 +21,14 @@ const AdminDashboard = () => {
 
   const fetchContacts = async () => {
     try {
+      // URL CORRECTE : /admin/contacts (pas /api/admin/contacts)
       const response = await fetch(`${API_URL}/admin/contacts`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        method: 'GET',
+        headers: { 
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
       
       if (!response.ok) {
@@ -47,14 +54,18 @@ const AdminDashboard = () => {
     try {
       const response = await fetch(`${API_URL}/admin/contacts/${id}/read`, {
         method: 'PUT',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
       
       if (response.ok) {
-        fetchContacts();
+        await fetchContacts(); // Attendre que les contacts soient rechargés
       }
     } catch (error) {
-      console.error(error);
+      console.error('Erreur markAsRead:', error);
     }
   };
 
@@ -63,14 +74,18 @@ const AdminDashboard = () => {
       try {
         const response = await fetch(`${API_URL}/admin/contacts/${id}`, {
           method: 'DELETE',
-          headers: { 'Authorization': `Bearer ${token}` }
+          headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
         });
         
         if (response.ok) {
-          fetchContacts();
+          await fetchContacts(); // Attendre que les contacts soient rechargés
         }
       } catch (error) {
-        console.error(error);
+        console.error('Erreur deleteContact:', error);
       }
     }
   };
@@ -85,27 +100,32 @@ const AdminDashboard = () => {
 
   const handleLogout = async () => {
     await logout();
+    // Rediriger vers la page de login admin
     window.location.href = '/admin';
   };
 
-  if (loading) return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ac5f2d] mx-auto mb-4"></div>
-        <p className="text-gray-600">Chargement...</p>
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ac5f2d] mx-auto mb-4"></div>
+          <p className="text-gray-600">Chargement...</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
   
-  if (error) return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="text-center text-red-500">Erreur: {error}</div>
-    </div>
-  );
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center text-red-500">Erreur: {error}</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-20"> {/* Ajout de padding-top pour éviter la navbar */}
-      {/* Header admin - sans position fixed */}
+    <div className="min-h-screen bg-gray-100 pt-20">
+      {/* Header admin */}
       <div className="bg-gradient-to-r from-[#ac5f2d] to-[#e67e22] text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
@@ -191,16 +211,16 @@ const AdminDashboard = () => {
                           <div className="text-xs text-gray-500 mt-1">📞 {contact.telephone}</div>
                         )}
                        </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-gray-600">{contact.email} </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-600">{contact.email}</td>
                       <td className="px-6 py-4">
                         <div className="max-w-xs truncate text-gray-600">{contact.message}</div>
-                       </td>
+                        </td>
                       <td className="px-6 py-4 whitespace-nowrap text-gray-500 text-sm">
                         <div className="flex items-center gap-1">
                           <FaCalendarAlt className="text-xs" />
                           {new Date(contact.created_at).toLocaleString()}
                         </div>
-                       </td>
+                        </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex gap-3">
                           <button 
@@ -227,8 +247,8 @@ const AdminDashboard = () => {
                             <FaTrash size={18} />
                           </button>
                         </div>
-                       </td>
-                     </tr>
+                        </td>
+                    </tr>
                   ))}
                 </tbody>
               </table>

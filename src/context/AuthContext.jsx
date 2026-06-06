@@ -2,7 +2,13 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -10,41 +16,53 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Utiliser la vraie URL de l'API en production
-  // Développement : http://127.0.0.1:8000/api
-  // Production : https://api.fifap.org/api
   const API_URL = import.meta.env.VITE_API_URL || 'https://darkgrey-kudu-778101.hostingersite.com/api';
 
-  useEffect(() => {
-    if (token) {
-      fetchUser();
-    } else {
-      setLoading(false);
-    }
-  }, [token]);
-
-  const fetchUser = async () => {
+  // Récupérer l'utilisateur connecté
+  const fetchUser = async (currentToken) => {
     try {
       const response = await fetch(`${API_URL}/admin/me`, {
+        method: 'GET',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          'Authorization': `Bearer ${currentToken}`,
           'Accept': 'application/json',
+          'Content-Type': 'application/json',
         },
       });
 
       if (response.ok) {
         const data = await response.json();
-        setUser(data.data.user);
+        if (data.success && data.data?.user) {
+          setUser(data.data.user);
+        } else {
+          // Token invalide, déconnexion
+          logout();
+        }
+      } else if (response.status === 401) {
+        // Non autorisé, déconnexion
+        logout();
       } else {
+        console.error('Erreur fetchUser:', response.status);
         logout();
       }
     } catch (error) {
-      console.error('Erreur:', error);
+      console.error('Erreur de connexion fetchUser:', error);
       logout();
     } finally {
       setLoading(false);
     }
   };
 
+  // Vérifier le token au chargement
+  useEffect(() => {
+    if (token) {
+      fetchUser(token);
+    } else {
+      setLoading(false);
+    }
+  }, [token]);
+
+  // Connexion
   const login = async (email, password) => {
     try {
       const response = await fetch(`${API_URL}/login`, {
@@ -59,19 +77,24 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        localStorage.setItem('admin_token', data.data.token);
-        setToken(data.data.token);
+        const newToken = data.data.token;
+        localStorage.setItem('admin_token', newToken);
+        setToken(newToken);
         setUser(data.data.user);
         return { success: true };
       } else {
-        return { success: false, message: data.message };
+        return { 
+          success: false, 
+          message: data.message || 'Email ou mot de passe incorrect' 
+        };
       }
     } catch (error) {
-      console.error('Erreur de connexion:', error);
+      console.error('Erreur de connexion login:', error);
       return { success: false, message: 'Erreur de connexion au serveur' };
     }
   };
 
+  // Déconnexion
   const logout = async () => {
     if (token) {
       try {
@@ -80,6 +103,7 @@ export const AuthProvider = ({ children }) => {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/json',
+            'Content-Type': 'application/json',
           },
         });
       } catch (error) {
