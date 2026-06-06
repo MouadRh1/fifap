@@ -22,6 +22,7 @@ import ChatButton from "../component/Outil/ChatBtn";
 import AdminDashboard from "../component/Admin/AdminDashboard";
 import AdminLogin from "../component/Admin/AdminLogin";
 import PrivateRoute from "../component/Admin/PrivateRoute";
+import DownloadButton from "../component/Outil/DownloadButton";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -56,6 +57,7 @@ export default function Router() {
         </Routes>
       </Suspense>
       <Footer />
+      <DownloadButton/>
       <ChatButton/>
     </BrowserRouter>
   );

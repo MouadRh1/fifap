@@ -7,7 +7,7 @@ import MuiAlert from "@mui/material/Alert";
 // Importez vos fichiers ici
 import programme from '../Assets/program-fr.pdf';
 import programArabe from '../Assets/program-ar.pdf';
-import invitation from '../Assets/invitation.jpeg';
+import invitation from '../Assets/invitation2.jfif';
 
 const DownloadButton = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -98,7 +98,7 @@ const DownloadButton = () => {
           severity="success" 
           onClose={() => setOpenSnackbar(false)}
         >
-          {snackbarMessage} 🎉
+          {snackbarMessage} 
         </MuiAlert>
       </Snackbar>
     </div>
